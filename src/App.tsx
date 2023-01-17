@@ -14,21 +14,15 @@ import Main from './Pages/Profile/Main/Main'
 import { ProtectedRoute } from './Utils/ProtectedRoutes'
 import { getUserData } from './feactures/user/UserSlice'
 import ListFavoriteUser from './Pages/Profile/Favorites/ListFavoriteUser'
-import { SnackbarProvider, VariantType, useSnackbar } from 'notistack';
+
 
 function App() {
   const active = useAppSelector(state => state.user.active)
   const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
-  const snack = useSnackbar()
 
 
-  const handleClickVariant = (variant: VariantType) => () => {
-    // variant could be success, error, warning, info, or default
-    snack.enqueueSnackbar('This is a success message!', { variant })
-    console.log('sadsada')
-  };
 
-   active && handleClickVariant('success')
+
   return (
 
     <SnackbarProvider maxSnack={3}>
@@ -58,7 +52,7 @@ function App() {
         
       </Box>
      
-      
+      <Footer/>
     </div>
     </SnackbarProvider>
    
