@@ -1,0 +1,9 @@
+.black {
+    background: black;
+    transition: 1s ease;
+}
+
+
+.transpararent {
+    background-color: transparent;
+}
