@@ -22,7 +22,7 @@ const Inicio = () => {
       
       <Box width='100%' display='flex' justifyContent='center'  flexDirection='column'   >
         
-            <CarruselN/>
+            
             <SearchDogInfo/>
             <Developer/>
             
