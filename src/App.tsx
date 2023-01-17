@@ -58,7 +58,7 @@ function App() {
         
       </Box>
      
-      <Footer/>
+      
     </div>
     </SnackbarProvider>
    
