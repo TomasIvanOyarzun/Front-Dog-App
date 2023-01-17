@@ -25,7 +25,7 @@ function App() {
 
   return (
 
-    <SnackbarProvider maxSnack={3}>
+   
    
    <div style={{width: '100%'}}>
       <Nav/>
@@ -54,7 +54,7 @@ function App() {
      
       <Footer/>
     </div>
-    </SnackbarProvider>
+
    
       
   )
