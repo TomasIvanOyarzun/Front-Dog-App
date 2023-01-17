@@ -1,14 +1,13 @@
 import React from 'react'
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { Typography } from '@mui/material';
 import DialogComment from './DialogComment';
-import { CommentResponse, userForCommentMath } from '../../../feactures/user/UserSlice';
+import { CommentResponse } from '../../../feactures/user/UserSlice';
 
 interface Props {
    

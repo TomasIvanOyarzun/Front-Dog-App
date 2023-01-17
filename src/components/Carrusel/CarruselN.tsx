@@ -2,7 +2,6 @@ import React from 'react'
 
 import dog_one from '../../images/dog-banner-1.png'
 import dog_two from '../../images/dog-banner-2.png'
-import Grow from '@mui/material/Grow';
 import { Box, } from '@mui/system';
 import Typography from '@mui/material/Typography';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -12,7 +11,6 @@ import Button from '@mui/material/Button';
 import { useWidthScreen } from '../../hooks/customHooks';
 
 const CarruselN = () => {
-  const [checked, setChecked] = React.useState(false);
 
   const {width } = useWidthScreen()
  
