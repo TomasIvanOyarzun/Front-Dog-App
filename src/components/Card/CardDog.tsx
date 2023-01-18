@@ -18,7 +18,7 @@ import {Link} from 'react-router-dom'
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { getUserData,  useFetchFavoriteUserQuery, useFetchUpdateUserMutation } from '../../feactures/user/UserSlice';
 
-import { styled } from '@mui/material/styles';
+import  styled from '@mui/material/styles/styled';
 import { useAppSelector } from '../../hooks/toolkitHooks';
 import { useWidthScreen } from '../../hooks/customHooks';
 

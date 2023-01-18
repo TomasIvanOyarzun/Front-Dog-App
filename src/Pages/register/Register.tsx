@@ -1,22 +1,15 @@
 import React from 'react'
 import { Container, Box} from '@mui/material'
-
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
-import StepButton from '@mui/material/StepButton';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import FormRegister from './form/FormRegister';
 import { form } from './form/controlForm';
-import ListImage from './form/imagenList/ListImage';
 import { useFetchRegisterMutation } from '../../feactures/user/UserSlice';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
+import  styled  from '@mui/material/styles/styled';
 import StepLabel from '@mui/material/StepLabel';
 import Check from '@mui/icons-material/Check';
-import SettingsIcon from '@mui/icons-material/Settings';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
@@ -24,7 +17,10 @@ import { StepIconProps } from '@mui/material/StepIcon';
 import Info from './form/Info';
 import FinishMessage from './FinishMessage';
 import InfoIcon from '@mui/icons-material/Info';
-import { useAppSelector } from '../../hooks/toolkitHooks';
+
+
+
+
 const steps = ['Your Account Data', 'Info', 'Finish'];
 
 

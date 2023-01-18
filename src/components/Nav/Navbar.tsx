@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
-import { styled} from '@mui/material/styles';
+import  styled from '@mui/material/styles/styled';
 import PetsIcon from '@mui/icons-material/Pets';
 import Chip from '@mui/material/Chip';
 import { emphasize} from '@mui/material/styles';
@@ -24,7 +24,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/toolkitHooks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../images/fetchDog.png'
 import { Container } from '@mui/system';
-import { getUserData, useFetchFavoriteUserQuery, userActive } from '../../feactures/user/UserSlice';
+import {  userActive } from '../../feactures/user/UserSlice';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { usePositionY, useWidthScreen } from '../../hooks/customHooks';
 import FavIcon from './favoriteIcon/FavIcon';
@@ -72,7 +72,7 @@ const Navbar = (props: Props) => {
   const [openOut, setOpenOut] = React.useState(false);
   const dispatch = useAppDispatch()
    const {width} = useWidthScreen()
-   const [y] = usePositionY()
+   const [y , setY ] = usePositionY()
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const locations = useLocation()
   

@@ -1,6 +1,6 @@
 
 import Badge, { BadgeProps } from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
+import  styled from '@mui/material/styles/styled';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { green } from '@mui/material/colors'

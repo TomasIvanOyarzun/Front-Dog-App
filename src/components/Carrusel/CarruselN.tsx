@@ -2,11 +2,11 @@ import React from 'react'
 
 import dog_one from '../../images/dog-banner-1.png'
 import dog_two from '../../images/dog-banner-2.png'
-import { Box, } from '@mui/material'
+import { Box, } from '@mui/system'
 import Typography from '@mui/material/Typography';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-
+import zIndex from '@mui/material/styles/zIndex';
 import Button from '@mui/material/Button';
 import { useWidthScreen } from '../../hooks/customHooks';
 
