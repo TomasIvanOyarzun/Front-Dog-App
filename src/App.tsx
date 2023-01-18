@@ -17,6 +17,8 @@ import ListFavoriteUser from './Pages/Profile/Favorites/ListFavoriteUser'
 function App() {
   const active = useAppSelector(state => state.user.active)
   const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
+
+  console.log(process.env.REACT_APP_BACKEND_URL)
   return (
     <div style={{width: '100%'}}>
       <Nav/>
