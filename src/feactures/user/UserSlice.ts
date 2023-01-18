@@ -122,6 +122,11 @@ export interface responsePostLike {
     comment : string
     likeUser : string,
 }
+
+export interface responseConfirmUser {
+    error: boolean,
+     msg: string
+}
 const UserQuery = DogSlice.injectEndpoints({
     
 
@@ -243,6 +248,14 @@ const UserQuery = DogSlice.injectEndpoints({
                
             }),
             invalidatesTags : ['Like']
+        }),
+
+        fetchConfirmAccount : builder.mutation<responseConfirmUser ,string>({
+            query : (id) => ({
+                url : `/confirm/${id}`,
+                method : 'PUT',
+                
+            }),
         })
         
          
@@ -289,7 +302,8 @@ export const {useFetchRegisterUserMutation,
     useFetchCommentIdQuery,
     useFetchPostLikeMutation,
     useFetchGetLikeQuery,
-    useFetchRemoveLikeMutation
+    useFetchRemoveLikeMutation,
+    useFetchConfirmAccountMutation
 
 } = UserQuery
 

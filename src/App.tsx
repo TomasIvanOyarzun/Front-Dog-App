@@ -29,6 +29,7 @@ function App() {
           <Route path='/home' element={<Home/>} />
           <Route path='/dog/:id' element={<DogDetail/>} />
           <Route path='/' element={<Inicio/>} />
+          <Route path='/inicio/:token' element={<Inicio/>} />
           <Route path='/register' element={<Register/>} />
            
           <Route    element={<ProtectedRoute isAllowed={user !== null} redirectTo={"/"}/>}>
