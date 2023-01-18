@@ -1,13 +1,13 @@
-const imageArray = [ 'https://cdn2.thedogapi.com/images/dW5UucTIW.jpg',
-'https://cdn2.thedogapi.com/images/pk1AAdloG.jpg',
-'https://cdn2.thedogapi.com/images/1-7cgoZSh.jpg','https://cdn2.thedogapi.com/images/A09F4c1qP.jpg',
-'https://cdn2.thedogapi.com/images/HJQ8ge5V7.jpg']
+
 import Carousel from 'better-react-carousel'
 
 
 const CardSlice = () => {
   
-    
+  const imageArray = [ 'https://cdn2.thedogapi.com/images/dW5UucTIW.jpg',
+  'https://cdn2.thedogapi.com/images/pk1AAdloG.jpg',
+  'https://cdn2.thedogapi.com/images/1-7cgoZSh.jpg','https://cdn2.thedogapi.com/images/A09F4c1qP.jpg',
+  'https://cdn2.thedogapi.com/images/HJQ8ge5V7.jpg']
 
 
   return (

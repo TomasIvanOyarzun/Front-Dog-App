@@ -70,7 +70,7 @@ export interface DogApi {
   export const DogSlice = createApi({
     reducerPath : 'dogApi',
     baseQuery : fetchBaseQuery({
-        baseUrl : import.meta.env.VITE_BACKEND_URL
+        baseUrl : process.env.REACT_APP_BACKEND_URL
     }),
     tagTypes : ['Comment', 'User','Favorite', 'postDog', 'Like'],
     endpoints(builder) {
