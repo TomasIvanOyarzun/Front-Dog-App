@@ -7,6 +7,7 @@ import Developer from './Developer/Developer';
 import SearchDogInfo from './SearchDog/SearchDogInfo';
 import { useFetchConfirmAccountMutation } from '../../feactures/user/UserSlice';
 import { useParams } from 'react-router-dom';
+import DiagloMsgEmailConfirm from './MsgDialogConfirmEmail/DiagloMsgEmailConfirm';
 
 
 const Inicio = () => {
@@ -27,7 +28,7 @@ const Inicio = () => {
  
   return (
     <>
-      
+     {responseBack !== undefined &&  <DiagloMsgEmailConfirm error={responseBack.error}/>}
       <Box width='100%' display='flex' justifyContent='center'  flexDirection='column'   >
         
             <CarruselN/>
