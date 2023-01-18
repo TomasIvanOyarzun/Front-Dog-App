@@ -1,14 +1,11 @@
-import React from 'react'
+
 import { Box, Stack, Container, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar';
-import github from '../../images/github.png'
-import linkedin from '../../images/linkedin.gif'
 import logo from '../../images/fetchDog.png'
 import GitHubIcon from '@mui/icons-material/GitHub';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import GoogleIcon from '@mui/icons-material/Google';
-import PublicIcon from '@mui/icons-material/Public';
+
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const array = [{name : 'React', image : 'https://nextsoftware.io/files/images/logos/main/reactjs-logo.png'}, {name : 'Redux Toolkit' , image : 'https://miro.medium.com/max/800/1*x2Y1VlQTzujsU48Lz9g2wg.jpeg'},

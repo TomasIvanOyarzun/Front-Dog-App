@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { Box } from '@mui/system'
+
+import { Box } from '@mui/material'
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import { getUserData, useFetchCommentIdQuery, useFetchFavoriteUserFullPropertyQuery, useFetchFavoriteUserQuery } from '../../../feactures/user/UserSlice';
+
+import { getUserData,  useFetchFavoriteUserFullPropertyQuery} from '../../../feactures/user/UserSlice';
 import ChangeImage from '../ChangeImage';
 import Chip from '@mui/material/Chip';
 import Alert from '@mui/material/Alert';
@@ -18,7 +18,7 @@ const Main = () => {
     const info = [{name : 'Name' , value : user.userName}, {name : 'Role', value : user.role}, {name : 'Email', value : user.email}, {name : 'Email verification', value : user.email_confirmed} ]
     const {data} = useFetchFavoriteUserFullPropertyQuery(user?._id)
  
-    console.log(data)
+   
    
 
  

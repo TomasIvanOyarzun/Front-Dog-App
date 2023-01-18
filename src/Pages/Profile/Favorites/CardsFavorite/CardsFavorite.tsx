@@ -8,7 +8,7 @@ import { getUserData, useFetchFavoriteUserFullPropertyQuery, useFetchFavoriteUse
 import { Checkbox, FormControlLabel } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Pagination from '@mui/material/Pagination';
-import { Box } from '@mui/system';
+import { Box } from '@mui/material';
 
 import { Grid } from '@mui/material'
 const CardsFavorite = () => {

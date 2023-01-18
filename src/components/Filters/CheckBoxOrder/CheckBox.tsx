@@ -1,14 +1,12 @@
 import React from 'react'
-import { Box } from '@mui/system'
+import { Box } from '@mui/material'
 import Checkbox from '@mui/material/Checkbox';
-import PetsIcon from '@mui/icons-material/Pets';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+
 import { useAppDispatch, useAppSelector } from '../../../hooks/toolkitHooks';
 import { filterOptions } from '../../../feactures/dog/DogSlice';
 import { Typography } from 'antd';
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
  
 const CheckBox = () => {
   const [sortDirection, setSortDirection] = React.useState<number>();

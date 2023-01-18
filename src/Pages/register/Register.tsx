@@ -225,9 +225,7 @@ const Register = () => {
     }
   
     }
-   console.log('active msg state', activeMsg)
-   console.log('el length de errorBack es === 0 ?',errorBack.length === 0)
-   console.log('errorBack.length > 0' ,errorBack.length > 0)
+
   return (
 
     <>

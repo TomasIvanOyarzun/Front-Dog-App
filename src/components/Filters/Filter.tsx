@@ -1,12 +1,6 @@
-import React from 'react'
-import { Box } from '@mui/system'
-import { Divider, Grid, Typography } from '@mui/material'
-import { temperamentSelect, useFetchTemperamentsQuery } from '../../feactures/dog/DogSlice'
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { useAppDispatch, useAppSelector } from '../../hooks/toolkitHooks';
+import { Box } from '@mui/material'
+import { Divider,Typography } from '@mui/material'
+import {  useAppSelector } from '../../hooks/toolkitHooks';
 import Temperament from './Temperament/Temperament';
 import SizeDogHeigth from './SizeDog/SizeDogHeight';
 import SizeDogWeight from './SizeDog/SizeDogWeight';
@@ -15,7 +9,7 @@ import ButtonResetFilter from './ButtonReset/ButtonResetFilter';
 
 const Filter = () => {
      const options = useAppSelector(state => state.dogReducer.fetchDog)
-     console.log(options)
+    
   return (
     <Box display='flex' flexDirection='column' p={2} bgcolor='#fff'  borderRadius='4px'  >
         

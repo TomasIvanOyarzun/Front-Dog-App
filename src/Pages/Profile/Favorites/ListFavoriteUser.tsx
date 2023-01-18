@@ -1,7 +1,6 @@
-import React from 'react'
 
-import { Box } from '@mui/system'
-import Grid from '@mui/material/Grid';
+import { Box } from '@mui/material'
+
 import CardsFavorite from './CardsFavorite/CardsFavorite';
 
 const ListFavoriteUser = () => {

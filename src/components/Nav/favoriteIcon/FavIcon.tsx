@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Badge, { BadgeProps } from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
@@ -16,7 +16,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 
 const FavIcon = () => {
     const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
-    const {data, isSuccess} = useFetchFavoriteUserQuery(user?._id)
+    const {data} = useFetchFavoriteUserQuery(user?._id)
   return (
     <IconButton aria-label="favorite">
     <StyledBadge badgeContent={data?.length} color="error">

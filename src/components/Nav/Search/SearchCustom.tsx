@@ -2,12 +2,10 @@ import React from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { useLocation } from 'react-router-dom';
-import { emphasize} from '@mui/material/styles';
-import Chip from '@mui/material/Chip';
 import InputBase from '@mui/material/InputBase';
 import { useAppDispatch, useAppSelector } from '../../../hooks/toolkitHooks';
 import { filterOptions } from '../../../feactures/dog/DogSlice';
-import { OptionUnstyled } from '@mui/base';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -37,25 +35,7 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 
-  const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-    const backgroundColor =
-      theme.palette.mode === 'light'
-        ? theme.palette.grey[100]
-        : theme.palette.grey[800];
-    return {
-      backgroundColor,
-      height: theme.spacing(3),
-      color: theme.palette.text.primary,
-      fontWeight: theme.typography.fontWeightRegular,
-      '&:hover, &:focus': {
-        backgroundColor: emphasize(backgroundColor, 0.06),
-      },
-      '&:active': {
-        boxShadow: theme.shadows[1],
-        backgroundColor: emphasize(backgroundColor, 0.12),
-      },
-    };
-  }) as typeof Chip
+
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',

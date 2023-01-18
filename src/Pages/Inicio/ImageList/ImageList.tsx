@@ -1,10 +1,10 @@
-import React from 'react'
+
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-import {Grid} from '@mui/material'
 import { useWidthScreen } from '../../../hooks/customHooks';
+
 const images = [
     {
       url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/17638/production/_124800859_gettyimages-817514614.jpg',

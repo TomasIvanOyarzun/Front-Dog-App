@@ -1,4 +1,4 @@
-import { Box } from '@mui/system'
+import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button';
 import CardSlice from '../CardInicio/CardSlice'

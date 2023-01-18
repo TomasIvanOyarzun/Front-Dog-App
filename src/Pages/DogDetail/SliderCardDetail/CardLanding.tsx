@@ -5,8 +5,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { DogApi } from '../../../feactures/dog/DogSlice';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import { Box } from '@mui/system';
+import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 

@@ -5,7 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import {  CommentResponse, useFetchUpdateCommentMutation, userForCommentMath } from '../../../feactures/user/UserSlice';
+import {  CommentResponse, useFetchUpdateCommentMutation } from '../../../feactures/user/UserSlice';
 
 import Divider from '@mui/material/Divider';
 interface Props {

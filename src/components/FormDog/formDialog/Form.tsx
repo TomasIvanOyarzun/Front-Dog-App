@@ -4,12 +4,10 @@ import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormHelperText from '@mui/material/FormHelperText';
-
 import Chip from '@mui/material/Chip';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import ChangeImage from '../../../Pages/Profile/ChangeImage';
-import Button from '@mui/material/Button';
 import { Temperaments, useFetchDogsPostMutation, useFetchTemperamentsQuery } from '../../../feactures/dog/DogSlice';
 import { useAppSelector } from '../../../hooks/toolkitHooks';
 import Avatar from '@mui/material/Avatar';
@@ -22,11 +20,9 @@ import Typography from '@mui/material/Typography';
 import { errorInput } from './controlForm';
 import { useWidthScreen } from '../../../hooks/customHooks';
 import LoadingButton from '@mui/lab/LoadingButton'
-
 import Alert from '@mui/material/Alert';
-
 import SendIcon from '@mui/icons-material/Send';
-import { ErrorResponse } from '@remix-run/router';
+
   const initialState = {
     name : '',
     minHeight : '',

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { CommentResponse, commentResponse,  getUserData, updatingComment, useFetchAllUserQuery, useFetchCommentsQuery, useFetchGetLikeQuery, useFetchPostLikeMutation, useFetchRemoveLikeMutation, useFetchUpdateCommentMutation } from '../../../feactures/user/UserSlice'
+import React from 'react'
+import { CommentResponse, getUserData,  useFetchCommentsQuery, useFetchGetLikeQuery, useFetchPostLikeMutation, useFetchRemoveLikeMutation, useFetchUpdateCommentMutation } from '../../../feactures/user/UserSlice'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
