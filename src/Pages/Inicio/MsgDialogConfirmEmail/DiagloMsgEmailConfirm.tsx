@@ -6,21 +6,23 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Alert from '@mui/material/Alert';
-
+import { green } from '@mui/material/colors';
 interface Props {
+   responseBack : {
     error : boolean 
-   
+    msg : string
+   }
 }
-const DiagloMsgEmailConfirm = ({error} : Props) => {
-
-    const [open, setOpen] = React.useState(false);
+const DiagloMsgEmailConfirm = ({responseBack} : Props) => {
+ console.log('desde el otro componente' , responseBack)
+    const [open, setOpen] = React.useState(true);
 
     const handleClickOpen = () => {
       setOpen(true);
     };
   
     const handleClose = () => {
-        if (error === false) {}
+      
       setOpen(false);
     };
 
@@ -38,18 +40,18 @@ const DiagloMsgEmailConfirm = ({error} : Props) => {
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          {error ?  <Alert variant="filled" severity="error">
+          {responseBack.error ?  <Alert variant="filled" severity="error">
         
           We couldn't validate this account because the confirmation token was already verified or doesn't exist
-      </Alert> :  <Alert variant="filled" severity="success">
+      </Alert> :  <Alert variant="filled" severity="success" sx={{bgcolor: green[500]}}>
       Thank you for creating an account in DOG APP, we tell you that it is already activated to be able to log in
       </Alert>}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Disagree</Button>
+     
         <Button onClick={handleClose} autoFocus>
-          Agree
+          Close
         </Button>
       </DialogActions>
     </Dialog>

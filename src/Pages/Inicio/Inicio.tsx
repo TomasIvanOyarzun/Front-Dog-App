@@ -12,25 +12,32 @@ import DiagloMsgEmailConfirm from './MsgDialogConfirmEmail/DiagloMsgEmailConfirm
 
 const Inicio = () => {
  
-  const [fetchConfirm] = useFetchConfirmAccountMutation()
+  const [fetchConfirm , response] = useFetchConfirmAccountMutation()
   const [responseBack , setResponseBack] = React.useState<{error : boolean, msg: string}>()
    const {token} = useParams()
 
 
-  React.useEffect(() => {
+
+ 
+  React.useEffect(  () => {
       if(token !== undefined) {
-        fetchConfirm(token).unwrap().then(response => setResponseBack(response) )
-        .catch(error => setResponseBack(error  ))
+        fetchConfirm(token).unwrap().then(response => {
+          setResponseBack(response)
+          console.log(response)
+        } )
+        .catch(error => setResponseBack(error.data ))
       }
         
   }, [])
+  
+  console.log(responseBack)
 
- 
   return (
-    <>
-     {responseBack !== undefined &&  <DiagloMsgEmailConfirm error={responseBack.error}/>}
+    <> 
+     { responseBack!== undefined  &&  <DiagloMsgEmailConfirm responseBack={responseBack}/>}
+     
       <Box width='100%' display='flex' justifyContent='center'  flexDirection='column'   >
-        
+     
             <CarruselN/>
             <SearchDogInfo/>
             <Developer/>

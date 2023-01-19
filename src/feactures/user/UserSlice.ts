@@ -124,8 +124,10 @@ export interface responsePostLike {
 }
 
 export interface responseConfirmUser {
-    error: boolean,
-     msg: string
+ 
+        error : boolean
+        msg : string
+   
 }
 const UserQuery = DogSlice.injectEndpoints({
     
