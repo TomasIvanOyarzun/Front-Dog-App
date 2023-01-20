@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom'
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { getUserData,  useFetchFavoriteUserQuery, useFetchUpdateUserMutation } from '../../feactures/user/UserSlice';
-
+import Tooltip from '@mui/material/Tooltip';
 import  styled from '@mui/material/styles/styled';
 import { useAppSelector } from '../../hooks/toolkitHooks';
 import { useWidthScreen } from '../../hooks/customHooks';
@@ -44,9 +44,12 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 const CardDog = ({ dog } : Props) => {
   const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
-  const {data, isSuccess} = useFetchFavoriteUserQuery(user?._id)
+   const {data, isSuccess} = useFetchFavoriteUserQuery(user?._id)
   const [expanded, setExpanded] = React.useState(false);
   const active = useAppSelector(state => state.user.active)
+  const [open, setOpen] = React.useState(false);
+
+
   const [updateUser] = useFetchUpdateUserMutation()
 
     const {width} = useWidthScreen()
@@ -58,38 +61,47 @@ const CardDog = ({ dog } : Props) => {
   const handleOnClick = (e : React.SyntheticEvent<Element, Event>) => {
    
 
-    const unicos = data?.filter((valor, indice) => {
-      return data.indexOf(valor) === indice;
-    })
-
-    const noRepeats = unicos?.every((el) => {
-      return el !== dog._id
-    })
-    
-   if(noRepeats) {
-       updateUser({...user, favorite : unicos?.concat([`${dog._id}`])})
-   } else {
-    const deletes = data?.filter(el => el !== dog._id)
-
-    updateUser({...user, favorite : deletes})
-   }
-
+   
+      const unicos = data?.filter((valor, indice) => {
+        return data.indexOf(valor) === indice;
+      })
+  
+      const noRepeats = unicos?.every((el) => {
+        return el !== dog._id
+      })
+      
+     if(noRepeats) {
+         updateUser({...user, favorite : unicos?.concat([`${dog._id}`])})
+     } else {
+      const deletes = data?.filter(el => el !== dog._id)
+  
+      updateUser({...user, favorite : deletes})
+     }
+  
+  
 
   }
  
 
-  
+  const handleClose = () => {
+    setOpen(false);
+  };
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
+console.log(open)
   return (
     
 
-    
-    <Card sx={{ maxWidth: 345, width: 345  , boxShadow : 'rgba(0, 0, 0, 0.15) 0px 2px 8px'}}>
+    <Tooltip open={open} onClose={handleClose} onOpen={handleOpen} title={dog.name}>
+    <Card sx={{ maxWidth: 345, width: 345  , boxShadow : 'rgba(0, 0, 0, 0.15) 0px 2px 8px', position: 'relative'}}>
     
     <CardMedia
       component="img"
       height="194"
+       sx={{display: 'block', transition: 'transform 0.5s ease' ,  transform : open ? 'scale(1.2)' : 'none'}}
       image={dog.image}
       alt={dog.name}
       
@@ -123,6 +135,7 @@ const CardDog = ({ dog } : Props) => {
     
     
   </Card>
+  </Tooltip>
    
   )
 }

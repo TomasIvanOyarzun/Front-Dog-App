@@ -2,7 +2,7 @@
 import { Box } from '@mui/material'
 import Avatar from '@mui/material/Avatar';
 
-import { getUserData,  useFetchFavoriteUserFullPropertyQuery} from '../../../feactures/user/UserSlice';
+import { getUserData,  imageUrlUser,  useFetchFavoriteUserFullPropertyQuery} from '../../../feactures/user/UserSlice';
 import ChangeImage from '../ChangeImage';
 import Chip from '@mui/material/Chip';
 import Alert from '@mui/material/Alert';
@@ -41,7 +41,7 @@ const Main = () => {
            alt="Remy Sharp"
            src={user?.image}
            sx={{ width: 100, height: 100, marginBottom : '20px' ,zIndex: 999  }} />
-          <ChangeImage/>
+          <ChangeImage imageUrl={imageUrlUser}/>
              </Box>
       
               

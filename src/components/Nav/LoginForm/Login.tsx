@@ -31,18 +31,25 @@ import { Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useWidthScreen } from '../../../hooks/customHooks';
 
-
 interface Props {
     openOut : boolean
     setOpenOut : React.Dispatch<React.SetStateAction<boolean>>
 }
 
+const initialErrorState = {
+  status : 0,
+  data : {
+    msg : ''
+  }
+
+}
 const initialState = {
   email : '',
   password : ''
 }
 const Login = ({openOut, setOpenOut} : Props) => {
     
+  const [responseBack , setResponseBack] = React.useState(initialErrorState)
   const dispatch = useAppDispatch()
   const [login, result] = useFetchAuthenticateUserMutation()
     const [input, setInput] = React.useState(initialState)
@@ -77,7 +84,8 @@ const Login = ({openOut, setOpenOut} : Props) => {
     const handleOnsubmit =  (e : React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
            
-          login(input)
+          login(input).unwrap().then()
+          .catch(error => setResponseBack(error))
           setInput(initialState)
     }
 
@@ -91,7 +99,7 @@ const Login = ({openOut, setOpenOut} : Props) => {
         }
    },[data])
 
-  
+  console.log(responseBack)
   return (
       
        <>
@@ -113,15 +121,14 @@ const Login = ({openOut, setOpenOut} : Props) => {
         </Box >
         
         
-        <Box sx={{display : 'flex', justifyContent: 'center' }}>
+        <Box sx={{display : 'flex', justifyContent: 'center'}}>
         <DialogContent>
         
-          { result.isError  ? <Alert variant="filled" severity="error">
+          { result.isError && <Alert variant="filled" severity="error">
   <AlertTitle>Error</AlertTitle>
-  incorrect credentials or user does not exist<strong>, check it out!</strong>
-</Alert> : <DialogContentText>
-Log in to create dog breeds and have access to more content on the page.
-</DialogContentText> }
+  an error has arisen with the data entered
+reason: <strong>{responseBack.data.msg}</strong>
+</Alert>  }
 
 
 
@@ -131,14 +138,14 @@ Log in to create dog breeds and have access to more content on the page.
          <Box sx={{width: width > 600 ? '80%' : '100%', height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
           
           <FormControl variant="standard" fullWidth>
-        <InputLabel color='success' >
+        <InputLabel  >
           Email
         </InputLabel>
         <Input
           name='email'
           value={input.email}
           onChange={handleOnChange}
-          color="success"
+        
           startAdornment={
             <InputAdornment position="start">
               <MailOutlineIcon />
@@ -146,14 +153,15 @@ Log in to create dog breeds and have access to more content on the page.
           }
         />
       </FormControl>
-      <FormControl fullWidth  variant="standard">
-          <InputLabel color='success' htmlFor="standard-adornment-password">Password</InputLabel>
+      <FormControl fullWidth  variant="standard"  >
+          <InputLabel  htmlFor="standard-adornment-password">Password</InputLabel>
           <Input
             name='password'
             value={input.password}
             onChange={handleOnChange}
             type={showPassword ? 'text' : 'password'}
-            color="success"
+            
+           
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -167,6 +175,9 @@ Log in to create dog breeds and have access to more content on the page.
             }
           />
         </FormControl>
+        <Box width='100%'>
+        <Link onClick={() => setOpenOut(false)} style={{textDecoration: 'none', color: '#1976d2', fontSize: '14px'}} to='/register'>forgot password?</Link>
+        </Box>
          <Box width='100%'>
          <Button  sx={{backgroundColor: '#58f09b', backgroundImage: 'linear-gradient(45deg, #58f09b 0%, #06812f 100%)', boxShadow: 'none'}} fullWidth type='submit' variant="contained" endIcon={<SendIcon />}>LOGIN</Button>
 
@@ -180,8 +191,8 @@ Log in to create dog breeds and have access to more content on the page.
         </Box>
         <DialogActions>
           <Box sx={{width: '100%', display: 'flex', margin: '20px', justifyContent: 'center'}} >
-            <Typography color='gray'>You do not have an account ?</Typography>
-            <Link onClick={() => setOpenOut(false)} style={{textDecoration: 'none', color: '#1976d2'}} to='/register'>Create an account</Link>
+            <Typography color='gray' fontSize='15px'>You do not have an account ?</Typography>
+            <Link onClick={() => setOpenOut(false)} style={{textDecoration: 'none', color: '#1976d2', fontSize: '15px'}} to='/register'>Create an account</Link>
           </Box>
          
  

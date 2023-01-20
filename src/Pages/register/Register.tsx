@@ -228,7 +228,7 @@ const Register = () => {
 
     { errorBack.length > 0 && <FinishMessage type="error" msgBackError={errorBack} />}
     { resultRegister.isSuccess  && resultRegister.isError === false && <FinishMessage type="success" email={input.email} />}
-    <Container>
+    <Container  >
            
         <Box sx={{ display: 'flex' , flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100vh', }}>
         <Typography variant="h3" fontWeight='bold' gutterBottom>Register</Typography> 

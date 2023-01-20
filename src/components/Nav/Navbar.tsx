@@ -90,7 +90,7 @@ const Navbar = (props: Props) => {
         document.location.reload()
   }
     const absolute =  locations.pathname === '/' ? 'absolute' : ''
-    const bgColor =  locations.pathname === '/' && y < 800 ? 'transparent' : '#111'
+    const bgColor =  locations.pathname === '/' && y < 800 ? 'transparent' : '#64BE43'
 
    
     const shadow =   locations.pathname === '/' ? '0' : '1'

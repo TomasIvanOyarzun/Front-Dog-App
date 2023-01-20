@@ -8,8 +8,8 @@ import Chip from '@mui/material/Chip';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import ChangeImage from '../../../Pages/Profile/ChangeImage';
-import { Temperaments, useFetchDogsPostMutation, useFetchTemperamentsQuery } from '../../../feactures/dog/DogSlice';
-import { useAppSelector } from '../../../hooks/toolkitHooks';
+import { errorPostDog, Temperaments, useFetchDogsPostMutation, useFetchTemperamentsQuery } from '../../../feactures/dog/DogSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/toolkitHooks';
 import Avatar from '@mui/material/Avatar';
 import HeightIcon from '@mui/icons-material/Height';
 import PetsIcon from '@mui/icons-material/Pets';
@@ -22,6 +22,7 @@ import { useWidthScreen } from '../../../hooks/customHooks';
 import LoadingButton from '@mui/lab/LoadingButton'
 import Alert from '@mui/material/Alert';
 import SendIcon from '@mui/icons-material/Send';
+import { getUserData, imageUrlDog } from '../../../feactures/user/UserSlice';
 
   const initialState = {
     name : '',
@@ -53,17 +54,26 @@ import SendIcon from '@mui/icons-material/Send';
     temperament : ''
   }
 
+const initialErrorState ={
 
+  data : "",
+   error : "",
+   originalStatus : 0,
+     status : "",
+
+}
 const Form = () => {
 
-   
+    const user : getUserData = JSON.parse(localStorage.getItem('user') as string) 
     const [dog , setDog] = React.useState(initialState)
     const {data, isSuccess} = useFetchTemperamentsQuery('')
     const [loading, setLoading] = React.useState(false)
-    const imageUrl = useAppSelector(state => state.user.imageUrl)
+    const imageUrl = useAppSelector(state => state.user.imageUrlDog)
      const [errors, setError] = React.useState(initialState2)
-    const [value, setValue] = React.useState<Temperaments[]>([{ _id: '63a7f3f463c8f5f1d27890a8', name: 'Active'}]);
+    const [value, setValue] = React.useState<Temperaments[]>([]);
     const [postDogSave, resData] = useFetchDogsPostMutation()
+    const dispatch = useAppDispatch()
+    const [responseBack, setResponseBack] = React.useState<errorPostDog>(initialErrorState)
    
     const {width} = useWidthScreen()
     const handleOnChange = (e : React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
@@ -88,27 +98,33 @@ const Form = () => {
             weight :  `${dog.minWeight} - ${dog.maxWeight}`,
             life_span : `${dog.minLife_span} - ${dog.maxLife_span}`,
             temperament : value.map(el => el.name),
-            image : imageUrl
+            image : imageUrl,
+            user : user._id
         }
          
       
         setLoading(true)
        setTimeout(() => {
         setLoading(false)
-        postDogSave(dogPost)
+        if(Object.values(errors).join('').length === 0 && Object.values(dog).join('').length > 0){
+          postDogSave(dogPost).unwrap().then(response =>  response)
+          .catch(error => setResponseBack(error))
+        }
        },1000)
      
         
         setDog(initialState)
         setValue([])
+        dispatch(imageUrlDog(''))
         
     }
 
-   console.log(JSON.stringify(resData?.data?.error.data))
+   console.log(responseBack)
+   console.log(dog)
   return (
   <>    
        {resData.isError === false && resData.isSuccess === true && <AlertText msg='it was created correctly'/>}
-       {resData.error  &&   <Alert variant="filled" severity="error">{JSON.stringify(resData?.data?.error.data)}</Alert>}
+       {resData.error  &&   <Alert variant="filled" severity="error">{responseBack.data}</Alert>}
     <Box >
     <form onSubmit={handleOnSubmit} style={{display:'flex', flexWrap:'wrap', width:'100%', justifyContent:'center'}}>
 <FormControl sx={{ m: 1, width: width < 400 ? '100%' : '85%' }} variant="outlined">
@@ -311,7 +327,7 @@ const Form = () => {
   : <Avatar sx={{width: '70px', height: '70px', marginBottom: '12px' }}  alt='dog-image'>Photo</Avatar> 
 
 }
-<ChangeImage/> 
+<ChangeImage imageUrl={imageUrlDog}/> 
  </Box>
 
 

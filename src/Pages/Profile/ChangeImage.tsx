@@ -2,9 +2,9 @@ import React from 'react'
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import { useAppDispatch } from '../../hooks/toolkitHooks';
-import { imageUrl } from '../../feactures/user/UserSlice';
+import { imageUrlDog} from '../../feactures/user/UserSlice';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 interface clodinary {
     access_mode : string
     asset_id : string
@@ -46,7 +46,10 @@ width : number
 
 }
 
-const ChangeImage = () => {
+interface Props {
+  imageUrl : ActionCreatorWithPayload<string, string>
+}
+const ChangeImage = ({imageUrl} : Props) => {
 
     
  
@@ -76,7 +79,8 @@ const ChangeImage = () => {
          
         ).then((res): Promise<clodinary> => res.json())
         .then(data => {
-            dispatch(imageUrl(data.secure_url))
+         
+            dispatch( imageUrl(data.secure_url))
             setLoading(false)
         })
         .catch(error => console.log(error)) 

@@ -80,10 +80,6 @@ export const errorInput = (input : form) => {
             }
          
 
-            if(input.temperament.length <= 0) {
-                err.temperament = '*choose at least 1 temperament'
-            } else if (input.temperament.length > 5) {
-                 err.temperament = '*maximum 5 temperaments'
-            }
+           
    return err
   }

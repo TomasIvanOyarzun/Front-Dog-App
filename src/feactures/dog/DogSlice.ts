@@ -10,9 +10,9 @@ export interface DogApi {
     image : string
     temperament : string[]
   }
-  interface Response {
+  export interface errorPostDog{
    
-    error : {
+    
       data : string
 
        error : string
@@ -21,29 +21,8 @@ export interface DogApi {
 
          status : string
 
-    }
-    
-    endpointName : string
    
-    fulfilledTimeStamp : number
-    
-    isError : boolean
    
-    isLoading  : boolean
-   
-    isSuccess : boolean
-    
-    isUninitialized : boolean
-   
-    originalArgs : DogApi
- 
-    requestId : string
-  
-    reset : () => void
-   
-    startedTimeStamp : number
-  
-    status : string
    
   }
 
@@ -99,7 +78,7 @@ export interface DogApi {
               }
           }),
           
-          fetchDogsPost : builder.mutation<Response, DogApi>({
+          fetchDogsPost : builder.mutation<DogApi, DogApi>({
             query : (data) => ({
               url : `/create/dog`,
               method : 'POST',

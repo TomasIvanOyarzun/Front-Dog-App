@@ -267,7 +267,9 @@ const UserQuery = DogSlice.injectEndpoints({
 
 const initialState = {
     active : false,
-    imageUrl : ''
+    imageUrlUser : '',
+    imageUrlDog: '',
+
    
 }
 
@@ -282,8 +284,11 @@ const UserSlice = createSlice({
            state.active = action.payload
         } ,
 
-        imageUrl : (state, action : PayloadAction<string>) => {
-            state.imageUrl = action.payload
+        imageUrlUser : (state, action : PayloadAction<string>) => {
+            state.imageUrlUser = action.payload
+        },
+        imageUrlDog : (state, action : PayloadAction<string>) => {
+            state.imageUrlDog = action.payload
         }
         
    
@@ -311,4 +316,4 @@ export const {useFetchRegisterUserMutation,
 
 
 export default UserSlice.reducer
-export const {userActive, imageUrl} = UserSlice.actions
+export const {userActive, imageUrlDog, imageUrlUser} = UserSlice.actions
