@@ -58,7 +58,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#64BE43',
+      main: '#004d40',
       darker: '#053e85',
     },
     neutral: {
@@ -81,7 +81,7 @@ const Panel = () => {
   return (
     <ThemeProvider theme={theme}>
     <Box
-    sx={{ width: 280 , height: '100%',backgroundColor: '#FFF' , boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'}}
+    sx={{ width: 280 , height: '100vh',backgroundColor: '#FFF', border: '1px solid #F4F4F4' }}
     
   >
  

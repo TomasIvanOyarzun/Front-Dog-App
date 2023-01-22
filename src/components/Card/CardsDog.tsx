@@ -19,8 +19,8 @@ const CardsDog = () => {
          {isError ? <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '300px'}}>
           <Spinner/>
           </Box> : 
-          data?.docs.map(el => (
-            <Grid xs={12} md={6} lg={4} p={2}   display='flex' justifyContent='center'  >
+          data?.docs.map((el, index) => (
+            <Grid item key={index}  xs={12} md={6} lg={4} p={2}   display='flex' justifyContent='center'  >
            
             <CardDog dog={el}  />
           </Grid>

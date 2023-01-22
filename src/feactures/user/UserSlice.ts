@@ -4,7 +4,7 @@ import { createSlice, PayloadAction} from "@reduxjs/toolkit";
 export interface getUserData {
    
         _id: string
-        userName: string
+        name: string
         email: string
         image? : string
         favorite? : string[]
@@ -128,6 +128,12 @@ export interface responseConfirmUser {
         error : boolean
         msg : string
    
+}
+
+export interface changePassword {
+    id  : string
+     pass : string
+      newPassword : string 
 }
 const UserQuery = DogSlice.injectEndpoints({
     
@@ -258,6 +264,14 @@ const UserQuery = DogSlice.injectEndpoints({
                 method : 'PUT',
                 
             }),
+        }),
+
+        fetchUserChangePassword : builder.mutation<{error : boolean , msg : string},changePassword>({
+            query : (data) => ({
+                url : `/change/password/${data.id}`,
+                method : 'PUT',
+                body : data
+            }),
         })
         
          
@@ -310,7 +324,8 @@ export const {useFetchRegisterUserMutation,
     useFetchPostLikeMutation,
     useFetchGetLikeQuery,
     useFetchRemoveLikeMutation,
-    useFetchConfirmAccountMutation
+    useFetchConfirmAccountMutation,
+    useFetchUserChangePasswordMutation
 
 } = UserQuery
 

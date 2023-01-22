@@ -91,7 +91,7 @@ const CardDog = ({ dog } : Props) => {
     setOpen(true);
   };
 
-console.log(open)
+
   return (
     
 

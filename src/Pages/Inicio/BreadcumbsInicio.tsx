@@ -27,7 +27,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
   
   function handleClick(event: React.MouseEvent<Element, MouseEvent>) {
     event.preventDefault();
-    console.info('You clicked a breadcrumb.');
+   
   }
   
 const BreadcumbsInicio = () => {

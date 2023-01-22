@@ -38,7 +38,7 @@ const NavMenuUser = () => {
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
       
-        <Tooltip title={user?.userName}>
+        <Tooltip title={user?.name}>
           <IconButton
             onClick={handleClick}
             size="large"

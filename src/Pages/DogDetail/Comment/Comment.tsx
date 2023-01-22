@@ -85,7 +85,7 @@ const Comment  = () => {
       localStorage.setItem("likedComments", JSON.stringify(likedComments));
     }, [likedComments]);
       
-    console.log(getLike.data)
+   
 
   return (
    

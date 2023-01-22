@@ -56,8 +56,8 @@ const Footer = () => {
                       <Box sx={{display: 'flex',}}>
                       <Box sx={{ display: 'flex', flexWrap: 'wrap'}} >
                          <Stack>
-                          {array.map(el => (
-                            <Box sx={{display: 'flex', alignItems: 'center', margin: '4px'}}>
+                          {array.map((el, index) => (
+                            <Box key={index} sx={{display: 'flex', alignItems: 'center', margin: '4px'}}>
                                  <Avatar alt="Remy Sharp" src={el.image} />
                                  <Typography  color='#cccccc' fontSize='13px' sx={{paddingLeft: '4px'}}>{el.name}</Typography>
                             </Box>
@@ -67,8 +67,8 @@ const Footer = () => {
 
                       <Box sx={{ display: 'flex', flexWrap: 'wrap'}} >
                          <Stack >
-                          {arrayLogo.map(el => (
-                            <Box sx={{display: 'flex', alignItems: 'center', margin: '4px'}}>
+                          {arrayLogo.map((el, index) => (
+                            <Box key={index} sx={{display: 'flex', alignItems: 'center', margin: '4px'}}>
                                  <Avatar  alt="Remy Sharp" src={el.image}  />
                                 
                                  <Typography  color='#cccccc' fontSize='13px'   sx={{paddingLeft: '4px'}} fontWeight= '100'>{el.name}</Typography>

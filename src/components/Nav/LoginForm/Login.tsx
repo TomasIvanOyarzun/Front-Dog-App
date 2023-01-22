@@ -23,13 +23,16 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import { useFetchAuthenticateUserMutation, useFetchDataUserQuery, userActive} from '../../../feactures/user/UserSlice';
-import { useAppDispatch } from '../../../hooks/toolkitHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/toolkitHooks';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Avatar from '@mui/material/Avatar';
 import { Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link as LinkRouter} from 'react-router-dom';
 import { useWidthScreen } from '../../../hooks/customHooks';
+import Snackbar from '@mui/material/Snackbar';
+import { red } from '@mui/material/colors';
+import Link from '@mui/material/Link';
 
 interface Props {
     openOut : boolean
@@ -47,12 +50,18 @@ const initialState = {
   email : '',
   password : ''
 }
+
+const initalStateEmail = {
+  email : ''
+}
 const Login = ({openOut, setOpenOut} : Props) => {
-    
+  const [sendEmail , setSendEmail] = React.useState(false)
   const [responseBack , setResponseBack] = React.useState(initialErrorState)
   const dispatch = useAppDispatch()
+
   const [login, result] = useFetchAuthenticateUserMutation()
     const [input, setInput] = React.useState(initialState)
+    const [inputForgotPasswordEmail, setInputForgotPasswordEmila] = React.useState(initalStateEmail)
     const {width } = useWidthScreen()
     
     const {data, isSuccess} = useFetchDataUserQuery(result.data?.token)
@@ -62,7 +71,8 @@ const Login = ({openOut, setOpenOut} : Props) => {
       setOpenOut(false);
 
     };
-
+  
+    
     const handleOnChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
           setInput({
             ...input,
@@ -88,9 +98,11 @@ const Login = ({openOut, setOpenOut} : Props) => {
           .catch(error => setResponseBack(error))
           setInput(initialState)
     }
+   
+
 
    React.useEffect(() => {
-  
+
         if(isSuccess) {
     
           localStorage.setItem('user', JSON.stringify(data))
@@ -99,108 +111,159 @@ const Login = ({openOut, setOpenOut} : Props) => {
         }
    },[data])
 
-  console.log(responseBack)
+
+  console.log(sendEmail)
   return (
       
        <>
    
-      <Dialog open={openOut} onClose={handleClose}  >
-        <Box display='flex' justifyContent='center'   >
-            <Box display='flex' flexDirection='column' alignItems='center'  >
-            
-            <Avatar
-            alt="Remy Sharp"
-            
-             sx={{ width: 84, height: 84 , marginTop: '20px'}}
-               >
-                   <AccountCircleIcon style={{fontSize: '80px'}} fontSize='large' /> 
-                </Avatar>
-                <DialogTitle color='#666'  sx={{fontSize: '32px', fontWeight: 'bold' }}>Sing Up</DialogTitle> 
-            </Box>
-
-        </Box >
-        
-        
-        <Box sx={{display : 'flex', justifyContent: 'center'}}>
-        <DialogContent>
-        
-          { result.isError && <Alert variant="filled" severity="error">
-  <AlertTitle>Error</AlertTitle>
-  an error has arisen with the data entered
-reason: <strong>{responseBack.data.msg}</strong>
-</Alert>  }
-
-
-
-       
-
-          <form style={{ width: '100%', height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center' }} onSubmit={handleOnsubmit}>
-         <Box sx={{width: width > 600 ? '80%' : '100%', height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
-          
-          <FormControl variant="standard" fullWidth>
-        <InputLabel  >
-          Email
-        </InputLabel>
-        <Input
-          name='email'
-          value={input.email}
-          onChange={handleOnChange}
-        
-          startAdornment={
-            <InputAdornment position="start">
-              <MailOutlineIcon />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <FormControl fullWidth  variant="standard"  >
-          <InputLabel  htmlFor="standard-adornment-password">Password</InputLabel>
-          <Input
-            name='password'
-            value={input.password}
-            onChange={handleOnChange}
-            type={showPassword ? 'text' : 'password'}
-            
+       {sendEmail === false ? 
+       <Dialog open={openOut} onClose={handleClose}   >
+       <Box display='flex' justifyContent='center'   >
+           <Box display='flex' flexDirection='column' width='100%'  >
            
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-        <Box width='100%'>
-        <Link onClick={() => setOpenOut(false)} style={{textDecoration: 'none', color: '#1976d2', fontSize: '14px'}} to='/register'>forgot password?</Link>
-        </Box>
-         <Box width='100%'>
-         <Button  sx={{backgroundColor: '#58f09b', backgroundImage: 'linear-gradient(45deg, #58f09b 0%, #06812f 100%)', boxShadow: 'none'}} fullWidth type='submit' variant="contained" endIcon={<SendIcon />}>LOGIN</Button>
-
           
-          </Box>
+                
+               <DialogTitle color='#464646'  sx={{fontSize: '32px', fontWeight: 'bold' }}>Sing Up</DialogTitle> 
+           </Box>
+
+       </Box >
+        
        
-         </Box>
-         </form>
-        </DialogContent>
+       <Box sx={{display : 'flex', justifyContent: 'center'}}>
+       <DialogContent>
+       
+      <DialogContentText>
+        If you do not have an account you can register where it says Create an account.
+         </DialogContentText> 
 
-        </Box>
-        <DialogActions>
-          <Box sx={{width: '100%', display: 'flex', margin: '20px', justifyContent: 'center'}} >
-            <Typography color='gray' fontSize='15px'>You do not have an account ?</Typography>
-            <Link onClick={() => setOpenOut(false)} style={{textDecoration: 'none', color: '#1976d2', fontSize: '15px'}} to='/register'>Create an account</Link>
-          </Box>
-         
- 
+         <Box width='100%' display='flex' flexDirection='column' alignItems='center'>
+          {result.isError &&
+            <Box width={width > 600 ? '80%' : '100%'}  margin='5px 0 5px 0'>
+           
+         <Alert  severity="error" variant="filled" sx={{ width: '100%', bgcolor : red[500] }}>
+           error , reason : {responseBack.data.msg}
+         </Alert>
+     
+            </Box>
+          }
+      
+           
+         <form style={{ width: '100%', height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center' }} onSubmit={handleOnsubmit}>
+        <Box sx={{width: width > 600 ? '80%' : '100%', height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
+       
+         <FormControl variant="standard" fullWidth>
+       <InputLabel  >
+         Email
+       </InputLabel>
+       <Input
+         name='email'
+         value={input.email}
+         onChange={handleOnChange}
+       
+         startAdornment={
+           <InputAdornment position="start">
+             <MailOutlineIcon />
+           </InputAdornment>
+         }
+       />
+     </FormControl>
+     <FormControl fullWidth  variant="standard"  >
+         <InputLabel  htmlFor="standard-adornment-password">Password</InputLabel>
+         <Input
+           name='password'
+           value={input.password}
+           onChange={handleOnChange}
+           type={showPassword ? 'text' : 'password'}
+           
           
-        </DialogActions>
+           endAdornment={
+             <InputAdornment position="end">
+               <IconButton
+                 aria-label="toggle password visibility"
+                 onClick={handleClickShowPassword}
+                 onMouseDown={handleMouseDownPassword}
+               >
+                 {showPassword ? <VisibilityOff /> : <Visibility />}
+               </IconButton>
+             </InputAdornment>
+           }
+         />
+       </FormControl>
+       <Box width='100%'>
+       <Link onClick={() => setSendEmail(true)} >forgot password?</Link>
+       </Box>
+        <Box width='100%'>
+        <Button  sx={{backgroundColor: '#64BE43', boxShadow: 'none'}} fullWidth type='submit' variant="contained" endIcon={<SendIcon />}>LOGIN</Button>
+
+         
+         </Box>
+      
+        </Box>
+        </form>
+        </Box>
+       </DialogContent>
+
+       </Box>
+       <DialogActions>
+         <Box sx={{width: '100%', display: 'flex', margin: '20px', justifyContent: 'center'}} >
+           <Typography color='gray' fontSize='15px' marginRight='5px'>no account?</Typography>
+           <LinkRouter onClick={() => setOpenOut(false)} style={{textDecoration: 'none', color: '#1976d2', fontSize: '15px'}} to='/register'>Create an account</LinkRouter>
+         </Box>
         
-        
-      </Dialog>
+
+         
+       </DialogActions>
+       
+       
+     </Dialog> :
+
+<Dialog open={openOut} onClose={handleClose}   >
+<Box display='flex' justifyContent='center' flexDirection='column' alignItems='center'   >
+<DialogTitle color='#464646'  sx={{fontSize: '32px', fontWeight: 'bold' }}>recover account</DialogTitle>
+  <Box width='80%'>
+  <DialogContentText>
+          You must enter the email of the account you want to recover.
+         </DialogContentText>  
+  </Box>
+<form style={{ width: '100%', height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center' }} onSubmit={handleOnsubmit}>
+        <Box sx={{width: '80%' , height:'200px', display : 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
+       
+         <FormControl variant="standard" fullWidth>
+       <InputLabel  >
+         Email
+       </InputLabel>
+       <Input
+         name='email'
+         value={input.email}
+         onChange={handleOnChange}
+       
+         startAdornment={
+           <InputAdornment position="start">
+             <MailOutlineIcon />
+           </InputAdornment>
+         }
+       />
+     </FormControl>
+     
+       <Box width='100%'>
+       
+       </Box>
+        <Box width='100%'>
+        <Button  sx={{backgroundColor: '#64BE43', boxShadow: 'none'}} fullWidth type='submit' variant="contained" endIcon={<SendIcon />}>SEND</Button>
+
+         
+         </Box>
+      
+        </Box>
+        </form>
+
+
+</Box>
+  
+
+</Dialog>
+      }
       
       </>
   )

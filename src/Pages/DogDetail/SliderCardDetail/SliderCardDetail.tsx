@@ -38,7 +38,7 @@ const SliderCardDetail = ({ temperaments} : Props) => {
         <Carousel cols={4} rows={1} gap={10} loop >
     
     {data?.docs.map(dog => (
-        <Carousel.Item>
+        <Carousel.Item key={dog._id}>
         <CardLanding dog = {dog} temp={temp} />
       </Carousel.Item>
     ))}

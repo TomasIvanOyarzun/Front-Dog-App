@@ -93,7 +93,7 @@ const ChangeImage = ({imageUrl} : Props) => {
 
   return (
     <div>
-     <Button startIcon={<CloudUploadIcon/>} sx={{backgroundColor: '##58f09b', backgroundImage: 'linear-gradient(45deg, #58f09b 0%, #06812f 100%)', border: 'none', color: '#fff', fontWeight: 'bold', boxShadow: 'none'}} variant='contained' onClick={handleClick}>Upload Photo</Button>
+     <Button startIcon={<CloudUploadIcon/>} sx={{backgroundColor: '#64BE43', border: 'none', color: '#fff', fontWeight: 'bold', boxShadow: 'none', height: '45px'}} variant='contained' onClick={handleClick}>Upload Photo</Button>
     <input
     
      type="file"

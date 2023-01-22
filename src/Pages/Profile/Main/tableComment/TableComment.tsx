@@ -42,7 +42,7 @@ const TableComment = () => {
                     variant="body2"
                     color="text.primary"
                   >
-                   {user.userName}
+                   {user.name}
                   </Typography>
                   {` — ${el.comment}`}
                 </React.Fragment>

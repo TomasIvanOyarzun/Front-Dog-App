@@ -25,6 +25,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import { useWidthScreen } from '../../hooks/customHooks';
 
 const DogDetail = () => {
 
@@ -33,6 +34,7 @@ const DogDetail = () => {
   const { data, isSuccess } = useFetchDogByIdQuery(id)
   const [isZoomed, setIsZoomed] = React.useState(false)
   const [value, setValue] = React.useState('1');
+  const {width} = useWidthScreen()
     
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -53,7 +55,7 @@ const DogDetail = () => {
         <Grid xs={12} md={6} lg={6}    >
         <Box width='100%'  >
         <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange}>
-        <img width='100%' height= '380px'  src={data?.image}></img>
+        <img width='100%' height= {width > 600 ? '380px' : '300px'}  src={data?.image}></img>
 
         </ControlledZoom>
        

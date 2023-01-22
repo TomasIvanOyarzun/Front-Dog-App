@@ -8,25 +8,25 @@ import { useWidthScreen } from '../../../hooks/customHooks';
 const images = [
     {
       url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/17638/production/_124800859_gettyimages-817514614.jpg',
-      title: 'Breakfast',
+      title: 'Pug',
       width: '20%',
     },
     {
       url: 'https://www.rd.com/wp-content/uploads/2022/01/GettyImages-912084898-e1641834261695.jpg',
-      title: 'Burgers',
+      title: '?',
       width: '20%',
     },
     {
       url: 'https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/2/2020/08/largest-dog-breeds-great-dane.jpg',
-      title: 'Camera',
+      title: '?',
       width: '20%',
     }, {
         url: 'https://www.rd.com/wp-content/uploads/2021/07/GettyImages-1263432693.jpg',
-        title: 'Camera',
+        title: '?',
         width: '20%',
       }, {
         url: 'https://cdn.britannica.com/49/161649-131-5A595140/Bernese-mountain-dog-grass.jpg',
-        title: 'Camera',
+        title: 'Boyero de Berna',
         width: '20%',
       }, {
         url: 'https://c4.wallpaperflare.com/wallpaper/599/712/27/german-shepherd-dogs-animal-wallpaper-preview.jpg',
@@ -38,15 +38,15 @@ const images = [
         width: '20%',
       }, {
         url: 'https://c4.wallpaperflare.com/wallpaper/782/693/204/dark-dog-animals-wallpaper-preview.jpg',
-        title: 'Camera',
+        title: '?',
         width: '20%',
       }, {
         url: 'https://swall.teahub.io/photos/small/83-837432_wallpaper-rottweiler-dog-autumn-walk-rottweiler-wallpaper-4k.jpg',
-        title: 'Camera',
+        title: 'rottweiler',
         width: '20%',
       }, {
         url: 'https://wallpaper.dog/large/5439050.jpg',
-        title: 'Camera',
+        title: '?',
         width: '20%',
       }
     
