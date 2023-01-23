@@ -1,10 +1,10 @@
 import React from 'react'
-import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import { useAppDispatch } from '../../hooks/toolkitHooks';
-import { imageUrlDog} from '../../feactures/user/UserSlice';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
+
+
 interface clodinary {
     access_mode : string
     asset_id : string

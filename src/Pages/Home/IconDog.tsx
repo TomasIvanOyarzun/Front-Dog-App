@@ -1,7 +1,5 @@
 import React from 'react'
 import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import Fab from '@mui/material/Fab';
 import { usePositionY, useWidthScreen } from '../../hooks/customHooks';
 import FormDog from '../../components/FormDog/FormDog';

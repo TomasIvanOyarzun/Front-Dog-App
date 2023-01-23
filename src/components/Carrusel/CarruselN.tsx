@@ -9,6 +9,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Button from '@mui/material/Button';
 import { useWidthScreen } from '../../hooks/customHooks';
 import Slide from '@mui/material/Slide';
+import { Link } from 'react-router-dom';
 const CarruselN = () => {
 
   const {width } = useWidthScreen()
@@ -35,7 +36,7 @@ const CarruselN = () => {
                  <Typography color='#fff' variant='h2' fontFamily='revert-layer' fontWeight='1000'>Learn all breeds of Dogs</Typography>
                  <Typography color='#fff' variant='h5' fontFamily='revert-layer' fontWeight='300'>Find the ideal dog for you, get information on all dogs
                   classified by breed, and more</Typography>
-                 <a style={{listStyle : 'none', textDecoration: 'none'}} href='#welcome'>  <Button sx={{backgroundColor: '#64BE43', color: '#fff', borderRadius: '2px' , width : width > 710 ? '20%' : '40%' , height: '45px'}}>see more</Button></a> 
+                <Link id='#welcomes' to='#welcomes' style={{listStyle : 'none', textDecoration: 'none'}}><Button sx={{backgroundColor: '#64BE43', color: '#fff', borderRadius: '2px' , width : width > 710 ? '20%' : '40%' , height: '45px'}}>see more</Button></Link> 
 
           
            </div>

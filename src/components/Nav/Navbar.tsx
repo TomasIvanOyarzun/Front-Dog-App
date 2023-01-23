@@ -9,9 +9,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
-import SearchIcon from '@mui/icons-material/Search';
 import  styled from '@mui/material/styles/styled';
 import PetsIcon from '@mui/icons-material/Pets';
 import Chip from '@mui/material/Chip';
@@ -72,12 +70,12 @@ const Navbar = (props: Props) => {
   const [openOut, setOpenOut] = React.useState(false);
   const dispatch = useAppDispatch()
    const {width} = useWidthScreen()
-   const [y , setY ] = usePositionY()
+   const [y] = usePositionY()
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const locations = useLocation()
   
      
-     const { window  } = props;
+   
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
@@ -105,8 +103,8 @@ const Navbar = (props: Props) => {
           <Divider />
           <List>
             {navItemsTrue.map((item, index) => (
-             <Link style={{textDecoration: 'none'}} to={item.link ? item.link : locations.pathname}>
-             <ListItem key={index} disablePadding sx={{ display: 'flex', justifyContent: 'center' }} >
+             <Link  key={index} style={{textDecoration: 'none'}} to={item.link ? item.link : locations.pathname}>
+             <ListItem disablePadding sx={{ display: 'flex', justifyContent: 'center' }} >
              
              <Box width='100%'>{item.component}</Box>
             

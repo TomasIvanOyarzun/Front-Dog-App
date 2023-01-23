@@ -23,7 +23,7 @@ const Welcome = () => {
   const {width} = useWidthScreen()
   return (
     <Container>
-    <Box  id='welcome' marginBottom='20px'  display='flex' width='100%' height={width > 950 ? '500px' : '100%' } justifyContent='center' alignItems='center' >
+    <Box  id='welcomes' marginBottom='20px'  display='flex' width='100%' height={width > 950 ? '500px' : '100%' } justifyContent='center' alignItems='center' >
             
     
   

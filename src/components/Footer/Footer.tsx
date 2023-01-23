@@ -89,8 +89,8 @@ const Footer = () => {
                    <Typography margin='10px' color='#64BE43'  fontWeight='500' gutterBottom>All routes on the page</Typography>
                     <Box width='20%' height='3px' bgcolor='#64BE43'  ></Box>
                     <Stack sx={{marginTop:'10px'}}>
-                     {['Inicio', 'Home | Cards', 'Register', 'About the page'].map(el => (
-                       <Link href="#" fontSize='12px' underline="hover" color='#fff' marginBottom='8px'>
+                     {['Inicio', 'Home | Cards', 'Register', 'About the page'].map((el,index) => (
+                       <Link key={index} href="#" fontSize='12px' underline="hover" color='#fff' marginBottom='8px'>
                        {el}
                      </Link>
                       

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useFetchDogsQuery } from '../../feactures/dog/DogSlice'
 import MyPagination from '../../components/Pagination/MyPagination'
 import CardsDog from '../../components/Card/CardsDog'
@@ -22,10 +22,10 @@ const Home = () => {
     
     <Stack direction="row" spacing={2} >
       <Grid container>
-         <Grid xs={12} md={3} lg={3}>
+         <Grid item xs={12} md={3} lg={3}>
             <Filter /> 
           </Grid>
-          <Grid xs={12}  md={9} lg={9}>
+          <Grid item xs={12}  md={9} lg={9}>
             <CardsDog/>
            </Grid> 
       </Grid>

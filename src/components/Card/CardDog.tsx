@@ -101,7 +101,7 @@ const CardDog = ({ dog } : Props) => {
     <CardMedia
       component="img"
       height="194"
-       sx={{display: 'block', transition: 'transform 0.5s ease' ,  transform : open ? 'scale(1.2)' : 'none'}}
+       sx={{display: 'block', transition: 'transform 0.5s ease' ,  transform : open ? 'scale(1.1)' : 'none'}}
       image={dog.image}
       alt={dog.name}
       

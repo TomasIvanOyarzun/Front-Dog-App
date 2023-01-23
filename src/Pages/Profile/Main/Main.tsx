@@ -2,19 +2,14 @@
 import { Box } from '@mui/material'
 import Avatar from '@mui/material/Avatar';
 import React from 'react'
-import { getUserData,  imageUrlUser,  useFetchFavoriteUserFullPropertyQuery, useFetchUpdateUserMutation} from '../../../feactures/user/UserSlice';
+import { getUserData,  imageUrlUser, useFetchUpdateUserMutation} from '../../../feactures/user/UserSlice';
 import ChangeImage from '../ChangeImage';
-import Chip from '@mui/material/Chip';
 import Alert from '@mui/material/Alert';
-
 import { useWidthScreen } from '../../../hooks/customHooks';
 import Typography from '@mui/material/Typography';
-
-import TableComment from './tableComment/TableComment';
 import { useAppSelector } from '../../../hooks/toolkitHooks';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import ChangePassword from './changePassword/ChangePassword';
 import Snackbar from '@mui/material/Snackbar';
 import { green } from '@mui/material/colors';
@@ -24,8 +19,6 @@ const Main = () => {
   
     const {width} = useWidthScreen()
     const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
-    const info = [{name : 'Name' , value : user.name}, {name : 'Role', value : user.role}, {name : 'Email', value : user.email}, {name : 'Email verification', value : user.email_confirmed} ]
-    const {data} = useFetchFavoriteUserFullPropertyQuery(user?._id)
     const [open , setOpen] = React.useState(false)
     const [updateUser] = useFetchUpdateUserMutation()
    const imageUser = useAppSelector(state => state.user.imageUrlUser)

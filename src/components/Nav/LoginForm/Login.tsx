@@ -9,28 +9,20 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Box } from '@mui/system';
 import SendIcon from '@mui/icons-material/Send';
-
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
-
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
-
 import FormControl from '@mui/material/FormControl';
-
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
 import { useFetchAuthenticateUserMutation, useFetchDataUserQuery, userActive} from '../../../feactures/user/UserSlice';
 import { useAppDispatch, useAppSelector } from '../../../hooks/toolkitHooks';
 import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Avatar from '@mui/material/Avatar';
 import { Typography } from '@mui/material';
 import { Link as LinkRouter} from 'react-router-dom';
 import { useWidthScreen } from '../../../hooks/customHooks';
-import Snackbar from '@mui/material/Snackbar';
 import { red } from '@mui/material/colors';
 import Link from '@mui/material/Link';
 
@@ -98,7 +90,19 @@ const Login = ({openOut, setOpenOut} : Props) => {
           .catch(error => setResponseBack(error))
           setInput(initialState)
     }
+    
+  
+    const handleOnChangeForgotPassword = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setInputForgotPasswordEmila({
+        ...handleClickShowPassword,
+         email : e.target.value
+      })
+    }
    
+    const handleOnSubmitForgoPassword = (e : React.FormEvent<HTMLFormElement>) => {
+         e.preventDefault()
+
+    }
 
 
    React.useEffect(() => {
@@ -235,8 +239,8 @@ const Login = ({openOut, setOpenOut} : Props) => {
        </InputLabel>
        <Input
          name='email'
-         value={input.email}
-         onChange={handleOnChange}
+         value={inputForgotPasswordEmail.email}
+         onChange={handleOnChangeForgotPassword}
        
          startAdornment={
            <InputAdornment position="start">
