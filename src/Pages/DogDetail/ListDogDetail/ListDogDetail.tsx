@@ -1,10 +1,8 @@
-
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
 import HeightIcon from '@mui/icons-material/Height';

@@ -30,7 +30,7 @@ const Inicio = () => {
         
   }, [])
   
-  console.log(responseBack)
+
 
   return (
     <> 
