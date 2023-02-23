@@ -196,7 +196,7 @@ const Login = ({openOut, setOpenOut} : Props) => {
        <Link onClick={() => setSendEmail(true)} >forgot password?</Link>
        </Box>
         <Box width='100%'>
-        <Button  sx={{backgroundColor: '#64BE43', boxShadow: 'none'}} fullWidth type='submit' variant="contained" endIcon={<SendIcon />}>LOGIN</Button>
+        <Button  sx={{backgroundColor: '#530D69', boxShadow: 'none'}} fullWidth type='submit' variant="contained" endIcon={<SendIcon />}>LOGIN</Button>
 
          
          </Box>

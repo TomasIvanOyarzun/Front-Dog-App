@@ -136,7 +136,7 @@ const Navbar = (props: Props) => {
           <MenuIcon />
         </IconButton>
         
-       {width > 600 && <img src={logo} width='150px'/>}
+       <Link to='/'> {width > 600 && <img src={logo} width='150px'/>}</Link>
        
         
 
