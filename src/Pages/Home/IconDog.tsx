@@ -18,7 +18,7 @@ const IconDog = () => {
   return (
     <>
     {<FormDog open={open} setOpen={setOpen}/>}
-    <Fab onClick={handleOnClick} sx={{ display: width < 900 ? displayNone : display,  position : 'fixed' , bottom : '10%', right: '2%' , bgcolor: '#64BE43'}} color="primary" aria-label="add">
+    <Fab onClick={handleOnClick} sx={{ display: width < 900 ? displayNone : display,  position : 'fixed' , bottom : '10%', right: '2%' , bgcolor: '#724B7E'}} color="primary" aria-label="add">
         <AddIcon  />
       </Fab>
       </>

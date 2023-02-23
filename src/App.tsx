@@ -14,6 +14,7 @@ import { ProtectedRoute } from './Utils/ProtectedRoutes'
 import { getUserData } from './feactures/user/UserSlice'
 import ListFavoriteUser from './Pages/Profile/Favorites/ListFavoriteUser'
 
+
 function App() {
   const active = useAppSelector(state => state.user.active)
   const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
@@ -31,6 +32,7 @@ function App() {
           <Route path='/' element={<Inicio/>} />
           <Route path='/confirm/:token' element={<Inicio/>} />
           <Route path='/register' element={<Register/>} />
+        
            
           <Route    element={<ProtectedRoute isAllowed={user !== null} redirectTo={"/"}/>}>
              

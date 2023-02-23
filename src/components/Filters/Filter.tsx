@@ -13,7 +13,7 @@ const Filter = () => {
   return (
     <Box display='flex' flexDirection='column' p={2} bgcolor='#fff'  borderRadius='4px'  >
         
-       <Typography gutterBottom variant="h4" color='#64BE43' fontWeight='700' component="div">
+       <Typography gutterBottom variant="h4" color='#724B7E' fontWeight='700' component="div">
        filters and sorts
        </Typography>
        <Divider/>

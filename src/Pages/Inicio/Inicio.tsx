@@ -1,5 +1,5 @@
 import React from 'react'
-import CarruselN from '../../components/Carrusel/CarruselN'
+import Landing from '../../components/Carrusel/Landing'
 import { Box } from '@mui/system'
 import Welcome from './Welcome/Welcome'
 import ImageList from './ImageList/ImageList';
@@ -38,11 +38,11 @@ const Inicio = () => {
      
       <Box width='100%' display='flex' justifyContent='center'  flexDirection='column'   >
      
-            <CarruselN/>
+            <Landing/>
             <SearchDogInfo/>
             <Developer/>
             
-            <Welcome />
+            
                
             <ImageList/>
                

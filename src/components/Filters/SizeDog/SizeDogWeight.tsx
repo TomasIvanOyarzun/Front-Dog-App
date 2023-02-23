@@ -42,7 +42,7 @@ const SizeDogWeight = () => {
       value={Number(options.weight)}
       getAriaValueText={valuetext}
       step={1}
-      sx={{color : '#64BE43'}}
+      sx={{color : '#724B7E'}}
       valueLabelDisplay="auto"
       marks={marks}
       onChange={handleOnChange}

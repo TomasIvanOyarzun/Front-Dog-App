@@ -3,7 +3,7 @@ import Badge, { BadgeProps } from '@mui/material/Badge';
 import  styled from '@mui/material/styles/styled';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { green } from '@mui/material/colors'
+
 import { getUserData, useFetchFavoriteUserQuery } from '../../../feactures/user/UserSlice';
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -20,7 +20,7 @@ const FavIcon = () => {
   return (
     <IconButton aria-label="favorite">
     <StyledBadge badgeContent={data?.length} color="error">
-      <FavoriteIcon sx={{color : green[500]}} fontSize='large' />
+      <FavoriteIcon sx={{color : '#410853'}} fontSize='large' />
     </StyledBadge>
   </IconButton>
   )

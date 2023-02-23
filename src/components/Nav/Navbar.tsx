@@ -88,7 +88,7 @@ const Navbar = (props: Props) => {
         document.location.reload()
   }
     const absolute =  locations.pathname === '/' ? 'absolute' : ''
-    const bgColor =  locations.pathname === '/' && y < 800 ? 'transparent' : '#64BE43'
+    const bgColor =  locations.pathname === '/' && y < 800 ? 'transparent' : '#530D69'
 
    
     const shadow =   locations.pathname === '/' ? '0' : '1'
@@ -145,7 +145,7 @@ const Navbar = (props: Props) => {
         
          <Box sx={{  width: '100%', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}>
           
-           {localStorage.getItem('user') && <FavIcon/>}
+           {localStorage.getItem('user') && <Link to='profile/favorites'><FavIcon/></Link>}
         
          
             {(localStorage.getItem('user') === null )|| (localStorage.getItem('user') === undefined) ?  (<Button  sx={{ color: '#fff' }} onClick={() => setOpenOut(!openOut)}> <LoginIcon/>{`Login`}</Button>)  :  (<NavMenuUser/>)

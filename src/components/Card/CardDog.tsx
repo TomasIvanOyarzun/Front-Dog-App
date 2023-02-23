@@ -116,7 +116,7 @@ const CardDog = ({ dog } : Props) => {
      
         
       
-     { user !== null && <FormControlLabel checked={isSuccess && data?.includes(dog._id as string)}  value={dog._id} onChange={ handleOnClick} control={<Checkbox  icon={<FavoriteIcon />} checkedIcon={<FavoriteIcon sx={{color:'#64BE43'}} />} />} label="Favorite" />}
+     { user !== null && <FormControlLabel checked={isSuccess && data?.includes(dog._id as string)}  value={dog._id} onChange={ handleOnClick} control={<Checkbox  icon={<FavoriteIcon />} checkedIcon={<FavoriteIcon sx={{color:'#410853'}} />} />} label="Favorite" />}
     
       <ExpandMore
         expand={expanded}
@@ -128,7 +128,7 @@ const CardDog = ({ dog } : Props) => {
       </ExpandMore>
       <Link style={{textDecoration: 'none'}} to={`/dog/${dog._id}`} >
           
-         <Button   sx={{border : 'transparent' , bgcolor: 'transparent', boxShadow: 'none', color: '#64BE43', fontWeight: 'bold'}} >Show</Button>
+         <Button   sx={{border : 'transparent' , bgcolor: 'transparent', boxShadow: 'none', color: '#724B7E', fontWeight: 'bold'}} >Show</Button>
           
       </Link>
     </CardActions>

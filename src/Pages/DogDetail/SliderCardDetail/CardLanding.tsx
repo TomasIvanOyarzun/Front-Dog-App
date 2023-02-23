@@ -36,7 +36,7 @@ const CardLanding = ({dog, temp} : Props) => {
         <Box display='flex' flexWrap='wrap' justifyContent='space-evenly'>
        
       {dog.temperament.map((el,index) => (
-        <Chip key={index} label={el} sx={{marginBottom: '3px', }} style={{backgroundColor : el === temp ? '#64BE43' : '#ECEBEB'}}  />
+        <Chip key={index} label={el} sx={{marginBottom: '3px', }} style={{backgroundColor : el === temp ? '#530D69' : '#ECEBEB', color : el === temp ? '#fff' : 'none'}}  />
 
       ))}
       

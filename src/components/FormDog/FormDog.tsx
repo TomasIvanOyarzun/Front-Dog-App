@@ -4,20 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import Box from '@mui/material/Box';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Chip from '@mui/material/Chip';
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-
-
 import DialogContentText from '@mui/material/DialogContentText';
-import ImageDog from '../../Pages/DogDetail/imageDog/ImageDog';
-import ChangeImage from '../../Pages/Profile/ChangeImage';
 import  Form  from './formDialog/Form';
 
 

@@ -20,7 +20,7 @@ const  MyPagination = () => {
   return (
     <Box my={2} display="flex" justifyContent="center">
         
-          <Pagination count={data?.totalPages}  color='primary' onChange={handleOnChange} />
+          <Pagination count={data?.totalPages}  color='secondary' onChange={handleOnChange} />
         
         
       </Box>

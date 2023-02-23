@@ -36,7 +36,7 @@ export const errorInput = (input : form) => {
    if(input.name.length >= 25) {
     err.name = '*max 25 characters'
   
-   } else if(input.name.length == 0) {
+   } else if(input.name.length === 0) {
     err.name = '*name required'
    }
   

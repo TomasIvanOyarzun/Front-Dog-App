@@ -98,9 +98,9 @@ const Panel = () => {
          
           <ListItemButton>
             <ListItemIcon>
-              {index === 0 && <DashboardIcon  color='primary'  fontSize='large'/> }
-              {index === 1 && <FavoriteBorderIcon  color='primary' fontSize='large'/>}
-              {index === 2 && <MailIcon  color='primary'  fontSize='large'/>}
+              {index === 0 && <DashboardIcon  sx={{color: '#530D69'}}  fontSize='large'/> }
+              {index === 1 && <FavoriteBorderIcon  sx={{color: '#530D69'}} fontSize='large'/>}
+              {index === 2 && <MailIcon  sx={{color: '#530D69'}}  fontSize='large'/>}
             </ListItemIcon>
             <ListItemText  sx={{color : '#464646', fontSize: '8px'}} primary={text.route} />
           </ListItemButton>
@@ -117,8 +117,8 @@ const Panel = () => {
           
           <ListItemButton>
             <ListItemIcon>
-              {index === 0 && <HouseSidingIcon  color='primary' fontSize='large'/>}
-              {index === 1 && <HomeSharpIcon  color='primary' fontSize='large'/>}
+              {index === 0 && <HouseSidingIcon  sx={{color: '#530D69'}} fontSize='large'/>}
+              {index === 1 && <HomeSharpIcon  sx={{color: '#530D69'}} fontSize='large'/>}
              
             </ListItemIcon>
             <ListItemText  sx={{color : '#464646'}} color={theme.palette.primary.main} primary={text.route}/>
@@ -153,7 +153,7 @@ const Panel = () => {
         <ListItem key='Logout' disablePadding>
           <ListItemButton>
             <ListItemIcon>
-           <MeetingRoomSharpIcon  color='success' fontSize='large'/>
+           <MeetingRoomSharpIcon  sx={{color: '#530D69'}} fontSize='large'/>
             </ListItemIcon>
             <ListItemText sx={{color : '#464646'}} primary='Logout' />
           </ListItemButton>

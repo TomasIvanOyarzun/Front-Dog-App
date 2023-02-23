@@ -9,7 +9,7 @@ const ButtonResetFilter = () => {
 
   return (
     <>
-    <Button sx={{backgroundColor: '#64BE43', color: '#fff', borderRadius: '2px' , margin: '10px'}}  onClick={() => dispatch(resetFilter())} >
+    <Button sx={{backgroundColor: '#724B7E', color: '#fff', borderRadius: '2px' , margin: '10px'}}  onClick={() => dispatch(resetFilter())} >
          Reset Filters
     </Button>
     </>

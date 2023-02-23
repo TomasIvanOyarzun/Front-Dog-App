@@ -36,9 +36,9 @@ const Footer = () => {
                       <Typography margin='10px' color='#cccccc' fontSize='13px'>123 Fake Streett, here is no address,
                       this web page is fictitious.</Typography>
                     <Box sx={{display: 'flex', alignItems: 'center', margin: '8px' }}>
-                              <GitHubIcon fontSize='large' sx={{marginRight: '10px' ,color: '#64BE43' }}/>
-                              <LinkedInIcon fontSize='large' sx={{marginRight: '10px',color: '#64BE43'}}/>  
-                              <GoogleIcon fontSize='large' sx={{marginRight: '10px',color: '#64BE43'}}/>  
+                              <GitHubIcon fontSize='large' sx={{marginRight: '10px' ,color: '#724B7E' }}/>
+                              <LinkedInIcon fontSize='large' sx={{marginRight: '10px',color: '#724B7E'}}/>  
+                              <GoogleIcon fontSize='large' sx={{marginRight: '10px',color: '#724B7E'}}/>  
                             </Box>
 
                             
@@ -51,15 +51,15 @@ const Footer = () => {
             
              <Grid item xs={12} md={4} lg={4}>
                 <Box marginBottom= '30px' marginTop='30px' >
-                    <Typography margin='10px' color='#64BE43' fontWeight='500'  gutterBottom>technology used</Typography>
-                    <Box width='28%' height='3px' bgcolor='#64BE43'></Box>
+                    <Typography margin='10px' color='#724B7E' fontWeight='500'  gutterBottom>technology used</Typography>
+                   
                       <Box sx={{display: 'flex',}}>
                       <Box sx={{ display: 'flex', flexWrap: 'wrap'}} >
                          <Stack>
                           {array.map((el, index) => (
                             <Box key={index} sx={{display: 'flex', alignItems: 'center', margin: '4px'}}>
                                  <Avatar alt="Remy Sharp" src={el.image} />
-                                 <Typography  color='#cccccc' fontSize='13px' sx={{paddingLeft: '4px'}}>{el.name}</Typography>
+                                 <Typography  color='#cccccc' fontSize='12px' sx={{paddingLeft: '4px'}}>{el.name}</Typography>
                             </Box>
                           ))}
                           </Stack>
@@ -71,7 +71,7 @@ const Footer = () => {
                             <Box key={index} sx={{display: 'flex', alignItems: 'center', margin: '4px'}}>
                                  <Avatar  alt="Remy Sharp" src={el.image}  />
                                 
-                                 <Typography  color='#cccccc' fontSize='13px'   sx={{paddingLeft: '4px'}} fontWeight= '100'>{el.name}</Typography>
+                                 <Typography  color='#cccccc' fontSize='12px'   sx={{paddingLeft: '4px'}} fontWeight= '100'>{el.name}</Typography>
                             </Box>
                           ))}
                           </Stack>
@@ -86,8 +86,8 @@ const Footer = () => {
 
                   <Grid item xs={12}  md={4} lg={4}>
                 <Box marginBottom= '30px' marginTop='30px' >
-                   <Typography margin='10px' color='#64BE43'  fontWeight='500' gutterBottom>All routes on the page</Typography>
-                    <Box width='20%' height='3px' bgcolor='#64BE43'  ></Box>
+                   <Typography margin='10px' color='#724B7E'  fontWeight='500' gutterBottom>All routes on the page</Typography>
+                    
                     <Stack sx={{marginTop:'10px'}}>
                      {['Inicio', 'Home | Cards', 'Register', 'About the page'].map((el,index) => (
                        <Link key={index} href="#" fontSize='12px' underline="hover" color='#fff' marginBottom='8px'>
