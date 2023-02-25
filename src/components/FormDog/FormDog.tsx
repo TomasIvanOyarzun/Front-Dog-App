@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import  Form  from './formDialog/Form';
-
+import Tooltip from '@mui/material/Tooltip';
 
 
 interface Props {
@@ -27,10 +27,11 @@ const FormDog = ({open , setOpen} : Props) => {
   };
    
   return (
-    <div>
     
+    <div>
+     
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle fontWeight='1000'>Create your dog breed</DialogTitle>
+      <DialogTitle fontWeight='1000' fontSize='23px'>Create your dog breed</DialogTitle>
       <DialogContent>
         <DialogContentText>
         Add to this list of breed dogs , your own breed , either invented or existing ,
@@ -41,11 +42,14 @@ const FormDog = ({open , setOpen} : Props) => {
        
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
+        <Button sx={{color : '#724B7E'}} onClick={handleClose}>Cancel</Button>
    
       </DialogActions>
     </Dialog>
+   
   </div>
+ 
+  
     
   )
 }

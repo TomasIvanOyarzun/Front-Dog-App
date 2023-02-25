@@ -32,7 +32,7 @@ const CheckBox = () => {
       <Checkbox
         checked={options.order === 1}
         onChange={handleCheckboxChange}
-        color='success'
+        color='secondary'
         value="1"
         defaultValue={sortDirection}
         inputProps={{
@@ -47,7 +47,7 @@ const CheckBox = () => {
         checked={options.order === -1 }
         onChange={handleCheckboxChange}
         value="-1"
-        color='success'
+        color='secondary'
         defaultValue={sortDirection}
         inputProps={{
           'aria-label': 'checkbox to sort descending'

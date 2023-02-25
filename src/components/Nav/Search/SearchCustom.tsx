@@ -71,7 +71,7 @@ const SearchCustom = () => {
        <>
     { location.pathname === '/home' && 
     <form onSubmit={handleSubmit}>
-    <Search sx={{color: '#666'}}  onChange={handleChangeInput}>
+    <Search sx={{color: '#fff'}}  onChange={handleChangeInput}>
     <SearchIconWrapper>
       <SearchIcon   />
     </SearchIconWrapper>

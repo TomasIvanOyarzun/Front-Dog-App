@@ -28,7 +28,7 @@ const Landing = () => {
         <Typography color='#FFF' variant={width < 600 ? 'h3' : 'h2'} fontWeight='1000' >Learn all breeds of Dogs</Typography>
         <Typography color='#FFF' >Find the breed of dog that suits your needs, create your own breeds and save it on
            the page, help us complete the entire list of breeds.</Typography>
-           <Button  sx={style} variant="contained" endIcon={<ArrowCircleDownIcon />}>
+           <Button href='#search' sx={style} variant="contained" endIcon={<ArrowCircleDownIcon />}>
         About
       </Button>
       </Box>
@@ -49,7 +49,7 @@ const Landing = () => {
  
 
 
-    <Box width='100%' height={ width > 850 ? '720px' : '100%'} sx={{display: 'flex' , flexDirection: 'column', justifyContent: 'flex-end', backgroundColor: '#6d1c6d', backgroundImage: 'linear-gradient(0deg, #6d1c6d 16%, #ffffff 100%)'}}>
+    <Box width='100%' height={ width > 850 ? '720px' : '100%'} sx={{display: 'flex' , flexDirection: 'column', justifyContent: 'flex-end', backgroundColor: '#6d1c6d', backgroundImage: 'linear-gradient(0deg, #570968  16%, #ffffff 100%)'}}>
        <CreateDogLanding/>
     </Box>
     

@@ -56,7 +56,7 @@ const Login = ({openOut, setOpenOut} : Props) => {
     
     const {data, isSuccess} = useFetchDataUserQuery(result.data?.token)
    
-    console.log(data)
+   
     const handleClose = () => {
       setOpenOut(false);
 

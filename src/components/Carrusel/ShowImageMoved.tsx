@@ -34,12 +34,13 @@ const slideImages = [
 ];
 
 const arrowStyles = {
-    display: 'none'
+    display: 'none',
+    borderRadius: '5px'
   };
 
 const ShowImageMoved = () => {
   return (
-    <div className="slide-container">
+    <div  className="slide-container">
         <Slide duration={2000}  prevArrow={<div style={arrowStyles}></div>}
          nextArrow={<div style={arrowStyles}></div>}>
          {slideImages.map((slideImage, index)=> (

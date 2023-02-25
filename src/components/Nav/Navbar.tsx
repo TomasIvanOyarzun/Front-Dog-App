@@ -98,7 +98,7 @@ const Navbar = (props: Props) => {
     const navItemsTrue = activeUser  || localStorage.getItem('user') ?  navItems :  navItemsLogin 
     const displayNone = locations.pathname !== '/profile'  ?  'flex' : 'none'
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor:'#262626' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor:'#262626'}}>
            <img src={logo} width='150px'/>
           <Divider />
           <List>

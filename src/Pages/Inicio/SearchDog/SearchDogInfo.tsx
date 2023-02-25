@@ -13,7 +13,7 @@ const SearchDogInfo = () => {
 
     const {width} = useWidthScreen()
   return (
-    <Box width='100%' height={width > 900 ? '800px' : '100%'}  display='flex' bgcolor='#f6f6f6' >
+    <Box id='search' width='100%' height={width > 900 ? '800px' : '100%'}  display='flex' bgcolor='#f6f6f6' >
          
      <Container  sx={{ display:'flex', alignItems:'center'}}>
          <Box width='100%' height={width > 900 ? '800px' : '100%'} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} >

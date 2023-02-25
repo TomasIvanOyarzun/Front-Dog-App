@@ -22,7 +22,7 @@ const CardMap = ({currentPage} : Props) => {
   return (
     <>
 
-<Box flex={8} p={2} >
+<Box flex={8} p={2} width='100%' >
         
         <Grid container    >
       

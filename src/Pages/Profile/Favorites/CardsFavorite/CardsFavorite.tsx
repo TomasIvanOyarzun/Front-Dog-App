@@ -47,7 +47,7 @@ const CardsFavorite = ({dog} : Props) => {
     <>
 
 
-        <Card key={dog._id} sx={{ maxWidth: 345, maxHeight: 445 }}>
+        <Card key={dog._id} sx={{width : 345 , maxWidth: 345, maxHeight: 445 }}>
     <CardActionArea>
       <CardMedia
         component="img"
