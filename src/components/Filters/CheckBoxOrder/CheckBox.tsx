@@ -5,7 +5,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { useAppDispatch, useAppSelector } from '../../../hooks/toolkitHooks';
 import { filterOptions } from '../../../feactures/dog/DogSlice';
 import { Typography } from 'antd';
-
+import PetsIcon from '@mui/icons-material/Pets';
 
  
 const CheckBox = () => {
@@ -38,6 +38,8 @@ const CheckBox = () => {
         inputProps={{
           'aria-label': 'checkbox to sort ascending'
         }}
+        icon={<PetsIcon/>}
+        checkedIcon={<PetsIcon/>}
       />
       <Typography color='#464646'>Ascending</Typography>
     
@@ -52,6 +54,8 @@ const CheckBox = () => {
         inputProps={{
           'aria-label': 'checkbox to sort descending'
         }}
+        icon={<PetsIcon/>}
+        checkedIcon={<PetsIcon/>}
       />
       <Typography color='#464646'>Descending</Typography>
       </Box>

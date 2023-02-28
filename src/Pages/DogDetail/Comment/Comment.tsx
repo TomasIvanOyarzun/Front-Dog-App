@@ -111,7 +111,7 @@ const Comment  = () => {
      <>  
 
      <Box sx={{width: '100%', padding: '40px'}}>
-        <Typography variant="subtitle1" gutterBottom color='#1976d2'>{isError ?   0 : data?.length} comentarios</Typography>
+        <Typography  variant="subtitle1" gutterBottom color='#632876'>{isError ?   0 : data?.length} comentarios</Typography>
        {localStorage.getItem('user') && <CommentLogin/>}
        {comments?.map((el,index) => (
           <Stack key={index} direction="row" spacing={2} marginBottom='8px'>
@@ -125,7 +125,7 @@ const Comment  = () => {
               
                <FormGroup>
               
-                  <FormControlLabel checked={getLike.data?.some(element => element.likeUser === user?._id && element.comment === el._id)} disabled={user ? false : true}  onClick={() => handleLikeClick(el)}  control={  <Checkbox  icon={<ThumbUpAltIcon/>} checkedIcon={<ThumbUpAltIcon />} />} label={el.like} />
+                  <FormControlLabel checked={getLike.data?.some(element => element.likeUser === user?._id && element.comment === el._id)} disabled={user ? false : true}  onClick={() => handleLikeClick(el)}  control={  <Checkbox color='secondary'  icon={<ThumbUpAltIcon/>} checkedIcon={<ThumbUpAltIcon />} />} label={el.like} />
     
                </FormGroup>
                 </Box>

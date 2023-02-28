@@ -24,7 +24,7 @@ const CardLanding = ({dog, temp} : Props) => {
     <CardActionArea>
       <CardMedia
         component="img"
-        height="140"
+        height="240"
         image={dog.image}
         alt="green iguana"
       />

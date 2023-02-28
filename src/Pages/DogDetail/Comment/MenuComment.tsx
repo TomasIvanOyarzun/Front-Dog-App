@@ -42,9 +42,9 @@ const MenuComment = ({user} : Props) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem sx={{height: '100%'}} onClick={handleClose}>
          
-        <ListItemIcon onClick={() => setOpenDialog(!openDialog)}>
+        <ListItemIcon  onClick={() => setOpenDialog(!openDialog)}>
             <DeleteIcon fontSize="small" />
             <Typography >Delete</Typography>
           </ListItemIcon>

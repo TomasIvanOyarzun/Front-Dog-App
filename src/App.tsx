@@ -4,7 +4,6 @@ import Nav from './components/Nav/Navbar'
 import DogDetail from './Pages/DogDetail/DogDetail'
 import Box from '@mui/material/Box';
 import Inicio from './Pages/Inicio/Inicio';
-import AlertText from './components/AlertText/AlertText'
 import { useAppSelector } from './hooks/toolkitHooks'
 import Footer from './components/Footer/Footer'
 import Register from './Pages/register/Register'
@@ -16,10 +15,10 @@ import ListFavoriteUser from './Pages/Profile/Favorites/ListFavoriteUser'
 
 
 function App() {
-  const active = useAppSelector(state => state.user.active)
+ 
   const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
 
-  console.log('cambiao', process.env.REACT_APP_BACKEND_URL)
+ 
   return (
     <div style={{width: '100%'}}>
       <Nav/>

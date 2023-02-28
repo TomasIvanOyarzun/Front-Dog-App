@@ -34,7 +34,7 @@ const SliderCardDetail = ({ temperaments} : Props) => {
   
   return (
       <>
-        <Typography fontSize={width > 500 ? '40px' : '25px'}  margin='15px' color='#111' variant="h3" fontWeight='200'>Breeds with similar temperaments <strong>{temp}</strong></Typography>
+        <Typography fontSize={width > 500 ? '40px' : '25px'}  margin='15px' color='#666' variant="h3" fontWeight='200'>Breeds with similar temperaments <strong>{temp}</strong></Typography>
         <Carousel cols={4} rows={1} gap={10} loop >
     
     {data?.docs.map(dog => (

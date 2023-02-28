@@ -94,6 +94,8 @@ const images = [
     alignItems: 'center',
     justifyContent: 'center',
     color: theme.palette.common.white,
+    background: 'rgb(83, 13, 105,0.4)',
+   
   }));
   
   const ImageBackdrop = styled('span')(({ theme }) => ({

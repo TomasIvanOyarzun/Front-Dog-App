@@ -50,12 +50,13 @@ const CommentLogin = () => {
           placeholder='oh, leave a comment...'
           onChange={handleOnChange}
           name='comment'
+          color='secondary'
           value={input.comment}
         />
       </FormControl>
       
       <Box sx={{display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-           <Button type='submit' variant="contained">send comment</Button>
+           <Button sx={{bgcolor: '#440E55'}} type='submit' variant="contained">send comment</Button>
       </Box>
       </form>
       </Box>

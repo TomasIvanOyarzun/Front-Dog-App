@@ -29,6 +29,7 @@ const SizeDogWeight = () => {
          setNumber(typeof value === 'number' ? value : 0)
          disptach(filterOptions({
           ...options,
+          page : 1,
            weight : value.toString()
          }))
     }

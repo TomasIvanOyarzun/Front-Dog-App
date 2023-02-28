@@ -56,12 +56,12 @@ const DogDetail = () => {
 
         <Grid xs={12} md={6} lg={6}     >
 
-        <TabContext value={value}>
+        <TabContext value={value} >
         <Box sx={{ borderBottom: 1, borderColor: 'divider', marginLeft: '10px' }}>
-          <TabList onChange={handleChange} sx={{marginLeft: '10px', display: 'flex' , justifyContent: 'flex-end'}} color='#111'
+          <TabList textColor="secondary" indicatorColor="secondary" onChange={handleChange} sx={{marginLeft: '10px', display: 'flex' , justifyContent: 'flex-end'}} color='#111'
         aria-label="lab API tabs example">
-            <Tab label="Item One" value="1" />
-            <Tab label="Item Two" value="2" />
+            <Tab label="Features" value="1" />
+            <Tab label="Temperaments" value="2" />
             <Tab label="Item Three" value="3" />
           </TabList>
         </Box>
@@ -83,10 +83,10 @@ const DogDetail = () => {
      
           
              
-          <Typography gutterBottom variant="h5"  color='#64BE43' fontWeight='700'>Temperaments</Typography>
+          <Typography gutterBottom variant="h5"  color='#530D69' fontWeight='700'>Temperaments</Typography>
         
         {data?.temperament.map((el,index) => (
-      <Button  sx={{margin: '5px', bgcolor: '#666'}} variant="contained" key={index}>{el}</Button>
+      <Button  sx={{margin: '5px', bgcolor: '#530D69', color: '#fff'}} key={index}>{el}</Button>
                                                                                 ))}
        
         </TabPanel>

@@ -12,6 +12,7 @@ import { Box } from '@mui/material';
 import IconDog from './IconDog';
 import { getUserData } from '../../feactures/user/UserSlice';
 import Spinner from '../../components/Spinner/Spinner';
+import Alphabet from '../../components/Filters/alphabet/Alphabet';
 const Home = () => {
   const page = useAppSelector(state => state.dogReducer.fetchDog)
     const {data} = useFetchDogsQuery(page)
@@ -26,7 +27,9 @@ const Home = () => {
          <Grid item xs={12} md={3} lg={3}>
             <Filter /> 
           </Grid>
-          <Grid item xs={12}  md={9} lg={9}>
+          
+          <Grid  item xs={12}  md={9} lg={9} spacing={2} >
+          <Alphabet/>
             {data?.docs ? <CardsDog/> : <Spinner/>}
            </Grid> 
       </Grid>

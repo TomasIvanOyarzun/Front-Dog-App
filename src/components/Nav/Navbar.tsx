@@ -68,13 +68,14 @@ const Navbar = (props: Props) => {
  
   const activeUser = useAppSelector(state => state.user.active)
   const [openOut, setOpenOut] = React.useState(false);
+  const options = useAppSelector(state => state.dogReducer.fetchDog)
   const dispatch = useAppDispatch()
    const {width} = useWidthScreen()
    const [y] = usePositionY()
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const locations = useLocation()
   
-     
+     console.log(options)
    
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
@@ -98,7 +99,7 @@ const Navbar = (props: Props) => {
     const navItemsTrue = activeUser  || localStorage.getItem('user') ?  navItems :  navItemsLogin 
     const displayNone = locations.pathname !== '/profile'  ?  'flex' : 'none'
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor:'#262626'}}>
+        <Box onClick={handleDrawerToggle} sx={{height: '100%', textAlign: 'center', bgcolor:'#262626'}}>
            <img src={logo} width='150px'/>
           <Divider />
           <List>
@@ -106,7 +107,8 @@ const Navbar = (props: Props) => {
              <Link  key={index} style={{textDecoration: 'none'}} to={item.link ? item.link : locations.pathname}>
              <ListItem disablePadding sx={{ display: 'flex', justifyContent: 'center' }} >
              
-             <Box width='100%'>{item.component}</Box>
+             
+             <Box  width='100%'>{item.component}</Box>
             
            </ListItem>
              </Link>
@@ -133,7 +135,7 @@ const Navbar = (props: Props) => {
           onClick={handleDrawerToggle}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{color: '#fff'}} />
         </IconButton>
         
        <Link to='/'> {width > 600 && <img src={logo} width='150px'/>}</Link>

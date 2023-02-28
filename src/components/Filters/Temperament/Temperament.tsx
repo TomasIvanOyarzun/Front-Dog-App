@@ -20,6 +20,7 @@ const Temperament = () => {
       setTemperament(event.target.value as string);
         dispatch(filterOptions({
               ...options,
+              page : 1,
               temperament : event.target.value
         }))
         dispatch(increment(1))
@@ -32,11 +33,12 @@ const Temperament = () => {
        </Typography>
        <Box sx={{ minWidth: 120, marginBottom: '15px' }}>
       <FormControl fullWidth >
-        <InputLabel id="demo-simple-select-label">Temperament</InputLabel>
+        <InputLabel color='secondary' id="demo-simple-select-label">Temperament</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={options.temperament}
+          color= 'secondary'
           label="temperament"
           onChange={handleChange}
         >

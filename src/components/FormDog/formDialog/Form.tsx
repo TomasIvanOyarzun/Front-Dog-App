@@ -119,8 +119,7 @@ const Form = () => {
         
     }
 
-   console.log(responseBack)
-   console.log(dog)
+  
   return (
   <>    
        {resData.isError === false && resData.isSuccess === true && <AlertText msg='it was created correctly'/>}

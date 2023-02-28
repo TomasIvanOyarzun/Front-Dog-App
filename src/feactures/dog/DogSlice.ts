@@ -57,7 +57,7 @@ export interface DogApi {
             fetchDogs : builder.query<requestBackDog , reducerDog2>({
                 query(filterOptions) {
                     return `/dogs?page=${filterOptions.page}&temperament=${filterOptions.temperament}&order=
-                    ${filterOptions.order}&height=${filterOptions.height}&weight=${filterOptions.weight}&search=${filterOptions.search}`
+                    ${filterOptions.order}&height=${filterOptions.height}&weight=${filterOptions.weight}&search=${filterOptions.search}&alphabet=${filterOptions.alphabet}`
                 },
                 providesTags : ['postDog']
             }),
@@ -106,6 +106,7 @@ export interface DogApi {
    
     page : number,
     temperament : string
+    alphabet : string
     height : string
     weight : string
     order : number
@@ -118,7 +119,7 @@ export interface DogApi {
     fetchDog : {
       page : 1 ,
       temperament : '',
-    
+      alphabet : '',
       height : '',
       weight : '',
       order : 0 ,

@@ -29,6 +29,7 @@ const SizeDog = () => {
          setNumber(typeof value === 'number' ? value : 0)
           disptach(filterOptions({
              ...options,
+             page : 1,
              height : value.toString()
           }))
     }

@@ -55,7 +55,7 @@ const DialogComment = ({openDialog, setOpenDialog, user} : Props) => {
     aria-describedby="alert-dialog-description"
   >
     <DialogTitle id="alert-dialog-title">
-      {"delete comment"}
+      <strong>{"Delete comment"}</strong>
     </DialogTitle>
     <DialogContent>
       <DialogContentText id="alert-dialog-description">
@@ -65,7 +65,7 @@ const DialogComment = ({openDialog, setOpenDialog, user} : Props) => {
      <Divider/>
     <DialogActions sx={{margin: '10px'}}>
       <Button onClick={handleOnClick} variant="contained" color='error'>Delete</Button>
-      <Button onClick={handleClose} autoFocus>
+      <Button onClick={handleClose} color='error' autoFocus>
         Cancel
       </Button>
     </DialogActions>
