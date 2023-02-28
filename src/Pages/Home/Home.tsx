@@ -17,6 +17,8 @@ const Home = () => {
   const page = useAppSelector(state => state.dogReducer.fetchDog)
     const {data} = useFetchDogsQuery(page)
     const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
+
+    console.log(data)
   return (
     <Box width='100%' sx={{backgroundColor: '#FFFF'}} >
      <Container>

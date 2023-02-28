@@ -75,7 +75,7 @@ const Navbar = (props: Props) => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const locations = useLocation()
   
-     
+     console.log(options)
    
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
