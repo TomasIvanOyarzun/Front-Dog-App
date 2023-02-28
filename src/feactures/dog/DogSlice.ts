@@ -45,6 +45,7 @@ export interface DogApi {
     name : string
   }
 
+
   
   export const DogSlice = createApi({
     reducerPath : 'dogApi',
@@ -58,6 +59,13 @@ export interface DogApi {
                 query(filterOptions) {
                     return `/dogs?page=${filterOptions.page}&temperament=${filterOptions.temperament}&order=
                     ${filterOptions.order}&height=${filterOptions.height}&weight=${filterOptions.weight}&search=${filterOptions.search}&alphabet=${filterOptions.alphabet}`
+                },
+                providesTags : ['postDog']
+            }),
+             fetchDogs2 : builder.query<DogApi[] , void>({
+                query() {
+                    return `/dogs/sliders`
+                    
                 },
                 providesTags : ['postDog']
             }),
@@ -154,4 +162,4 @@ export interface DogApi {
   
 export const { increment, temperamentSelect, filterOptions, resetFilter} = DogSlice3.actions
 export default DogSlice3.reducer
-  export const {useFetchDogsQuery, useFetchDogByIdQuery, useFetchTemperamentsQuery, useFetchDogsTemperamentQuery, useFetchDogsPostMutation} = DogSlice
+  export const {useFetchDogsQuery, useFetchDogByIdQuery, useFetchTemperamentsQuery, useFetchDogsTemperamentQuery, useFetchDogsPostMutation, useFetchDogs2Query} = DogSlice
