@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { Box } from '@mui/system'
 import Panel from './Panel/Panel'
 import { Outlet } from 'react-router-dom'
@@ -10,7 +10,10 @@ const Profile = () => {
   const {width} = useWidthScreen()
 
 
-  
+  React.useEffect(()=> {
+    window.scrollTo(0,0)
+ },[])
+
   return (
     <Box sx={{display: 'flex' , flexDirection:'column', width: '100%' , height:  '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF'}}>
 

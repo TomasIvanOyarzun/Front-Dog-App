@@ -34,7 +34,9 @@ const DogDetail = () => {
   const handleZoomChange = React.useCallback((shouldZoom : any )=> {
     setIsZoomed(shouldZoom)
   }, [])
-
+  React.useEffect(()=> {
+    window.scrollTo(0,0)
+ },[])
   return (
     <>
   

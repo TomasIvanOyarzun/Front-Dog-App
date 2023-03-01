@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { useFetchDogsQuery } from '../../feactures/dog/DogSlice'
 import MyPagination from '../../components/Pagination/MyPagination'
 import CardsDog from '../../components/Card/CardsDog'
@@ -18,7 +18,9 @@ const Home = () => {
     const {data} = useFetchDogsQuery(page)
     const user : getUserData = JSON.parse(localStorage.getItem('user') as string)
 
-    console.log(data)
+    React.useEffect(()=> {
+       window.scrollTo(0,0)
+    },[])
   return (
     <Box width='100%' sx={{backgroundColor: '#FFFF'}} >
      <Container>
