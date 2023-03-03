@@ -39,8 +39,9 @@ const Inicio = () => {
       <Box width='100%' display='flex' justifyContent='center'  flexDirection='column'   >
      
             <Landing/>
-            <SearchDogInfo/>
             <Developer/>
+            <SearchDogInfo/>
+            
             
             
                

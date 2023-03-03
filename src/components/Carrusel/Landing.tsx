@@ -6,6 +6,7 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import pug from '../../images/pug.png'
 import ShowImageMoved from './ShowImageMoved';
 import CreateDogLanding from './CreateDogLanding';
+import patas from '../../images/patas.png'
 const Landing = () => {
   
   const {width} = useWidthScreen()
@@ -49,7 +50,7 @@ const Landing = () => {
  
 
 
-    <Box width='100%' height={ width > 850 ? '720px' : '100%'} sx={{display: 'flex' , flexDirection: 'column', justifyContent: 'flex-end', backgroundColor: '#6d1c6d', backgroundImage: 'linear-gradient(0deg, #570968  16%, #ffffff 100%)'}}>
+    <Box width='100%' height={ width > 850 ? '720px' : '100%'} sx={{display: 'flex' , flexDirection: 'column', justifyContent: 'flex-end', backgroundColor: '#f2f2f2', backgroundImage: `url(${patas})`}}>
        <CreateDogLanding/>
     </Box>
     
