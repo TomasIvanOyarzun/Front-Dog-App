@@ -12,6 +12,10 @@ const Alphabet = () => {
            setActiveLetter(element)
            dispatch(filterOptions({...options, page : 1 ,alphabet: element }))
       }
+
+      React.useEffect(() => {
+         if (options.alphabet === '') setActiveLetter('')
+      },[options])
   return (
     <div style={{ width: '100%',   display: 'flex',flexWrap: 'wrap', justifyContent: 'center'}} >
      {alphabet.map(el => (
